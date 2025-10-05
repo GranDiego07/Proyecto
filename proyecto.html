@@ -27,24 +27,28 @@
             background: white;
         }
         header {
-            /* Gradiente verde que representa la identidad de la marca */
-            background: linear-gradient(0deg, #7165F0 0%,white 20%, red 40%,white 60%, #7165F0 80% );
+            background: linear-gradient(180deg, #002B7F 0% 20%, white 20% 35%, #CE1126 35% 65%, white 65% 80%, #002B7F 80% 100%);
             color: #000;
             padding: 40px 20px;
             text-align: center;
             margin-bottom: 30px;
+            border: 3px solid #002B7F;
         }
         
         /* Título principal del documento */
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            color: #002B7F;
+            text-shadow: 2px 2px 4px rbga(255,255,255,0.8);
         }
         
         /* Subtítulo con información del curso */
         .subtitle {
             font-size: 1.1em;
             opacity: 0.9; /* Ligeramente transparente para jerarquía visual */
+            font-weight: bold;
+            color: #333;
         }
         section {
             margin-bottom: 50px; /* Espaciado entre secciones */
@@ -59,15 +63,192 @@
             color: royalblue; /* Color Royal Azul principal */
             font-size: 2em;
             margin-bottom: 20px;
-            border-bottom: 3px solid #8b6f47; /* Borde inferior color café */
+            border-bottom: 3px solid #CE1126; /* Borde inferior color café */
             padding-bottom: 10px;
         }
+        h3{
+            color: #002B7F;
+            font-size: 1.5em;
+            margin: 20px 0 15 0;
+        }
+        /*
+        Informacion de la empresa
+        */
+
         .empresa-into{
         background: linear-gradient(135deg,#f8f9fa 0%, #e9ecef 100%);
         padding: 25px;
         border-radius: 8px;
-        border-left: 5px solid #2c5530;
+        border-left: 5px solid royalblue;
     }
+    /*
+    Logo
+    */
+    .logo-container{
+        text-align: center;
+        padding: 40px;
+        background: white;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+
+    .justificacion{
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+            
+        /* ========================================
+           WIREFRAMES
+           ======================================== */
+        .wireframe {
+            border: 3px solid royalblue;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+        }
+        
+        .wireframe-header {
+            background: linear-gradient(180deg, #002B7F 0% 30%, #CE1126 30% 70%, #002B7F 70% 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .wireframe-nav {
+            background: royalblue;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .wireframe-nav span {
+            padding: 5px 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            margin: 5px;
+        }
+        
+        .wireframe-content {
+            min-height: 400px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .content-box {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #CE1126;
+        }
+        
+        .wireframe-footer {
+            background: #002B7F;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        /* ========================================
+           BLOG
+           ======================================== */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        
+        .blog-image {
+            background: #CE1126;
+            height: 120px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .sidebar {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        /* ========================================
+           TABLA - CRONOGRAMA
+           ======================================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background: royalblue;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tr:hover {
+            background: #e9ecef;
+        }
+        
+        /* ========================================
+           COMENTARIOS
+           ======================================== */
+        .comment-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .comment {
+            background: white;
+            padding: 15px;
+            border-left: 3px solid #CE1126;
+            margin-bottom: 10px;
+        }
+        
+        .form-box {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
     </style>
     
 </head>
@@ -80,10 +261,11 @@
     <!--
     Logo de la empresa
     -->
+    <div class="container">
     <section>
         <h2>Logo de la Empresa</h2>
         <div class="logo-container">
-            <img src="imagenes/Logoproyecto.png" alt="Logo Aroma Verde" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+            <img src="imagenes/Logoproyecto.png" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
         </div>
         
         <div class="justificación">
@@ -92,10 +274,14 @@
                 <strong>Elemento del Diseño</strong>
             </p>
             <ul style="margin-left: 40px; line-height: 1.8;">
-                <li><strong>El logotipo busca replicar el diseño tradicional de la carreta costarricense con el propósito de representar y 
-                    resaltar la autenticidad de la gastronomía típica del país.</strong></li>
+                <li><strong>Diseño de carreta costarricense</strong>El logotipo busca replicar el diseño tradicional de la carreta costarricense con el propósito de representar y resaltar la autenticidad de la gastronomía típica del país.</li>
+                <li><strong>Colores patrios:</strong> Uso de azul, blanco y rojo que identifican a Costa Rica y refuerzan la identidad nacional del negocio.</li>
+                    <li><strong>Tipografía tradicional:</strong> Letras que evocan la nostalgia y tradición de las sodas de pueblo costarricenses.</li>
+                    <li><strong>Elementos decorativos:</strong> Detalles que recuerdan a las carretas típicas pintadas a mano, símbolo de la cultura y artesanía nacional.</li>
             </ul>
-
+            <p style="margin: 15px 0; line-height: 1.8;">
+                    <strong>Concepto general:</strong> El logo transmite tradición, autenticidad y orgullo costarricense. Conecta inmediatamente con el público que busca comida típica de calidad en un ambiente familiar y acogedor.
+                </p>
         </div>
     </section>
     
@@ -123,7 +309,215 @@
             El negocio combina la tradición de comida costarricense con prácticas modernas de sostenibilidad.            
         </p>
     </section>
-    
+    <section>
+            <h2>📐 MAQUETADO - PÁGINA PRINCIPAL / INICIO</h2>
+            
+            <div class="wireframe">
+                <!-- HEADER -->
+                <div class="wireframe-header">
+                    <h3 style="margin: 0; font-size: 1.5em;">SODA SABORTICO 🇨🇷</h3>
+                    <p style="margin: 5px 0 0 0; opacity: 0.9;">Sabor Auténtico de Costa Rica</p>
+                </div>
+                
+                <!-- NAVEGACIÓN -->
+                <div class="wireframe-nav">
+                    <span>Inicio</span>
+                    <span>Menú</span>
+                    <span>Blog</span>
+                    <span>Especiales</span>
+                    <span>Nosotros</span>
+                    <span>Contacto</span>
+                </div>
+                
+                <!-- CONTENIDO -->
+                <div class="wireframe-content">
+                    <!-- Hero Section -->
+                    <div class="content-box" style="background: linear-gradient(135deg, #002B7F 0%, royalblue 100%); color: white; padding: 40px; text-align: center;">
+                        <h3 style="color: white; margin: 0;">SECCIÓN HERO / BANNER PRINCIPAL</h3>
+                        <p>Imagen de fondo: Plato de casado tradicional costarricense</p>
+                        <p style="font-size: 1.3em; margin: 10px 0;">"El verdadero sabor tico en cada bocado"</p>
+                        <p>[Botón CTA: Ver Menú del Día]</p>
+                    </div>
+                    
+                    <!-- Quiénes Somos -->
+                    <div class="content-box">
+                        <h3 style="color: royalblue;">QUIÉNES SOMOS</h3>
+                        <p><strong>Contenido:</strong> Presentación de Soda Sabortico (2-3 párrafos)</p>
+                        <p><strong>Elementos:</strong></p>
+                        <ul>
+                            <li>Imagen del local/cocina (50% ancho, lado izquierdo)</li>
+                            <li>Texto sobre historia y valores (50% ancho, lado derecho)</li>
+                            <li>Tradición familiar, recetas de abuela, ingredientes frescos</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Especialidades -->
+                    <div class="content-box">
+                        <h3 style="color: royalblue;">NUESTRAS ESPECIALIDADES</h3>
+                        <p><strong>Estructura:</strong> Grid de 3 columnas responsive</p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+                            <div style="background: #CE1126; color: white; padding: 20px; border-radius: 5px; text-align: center;">
+                                <p>🍳</p>
+                                <p><strong>Desayunos Típicos</strong></p>
+                                <p style="font-size: 0.9em;">Gallo pinto, huevos, tortillas caseras</p>
+                            </div>
+                            <div style="background: #CE1126; color: white; padding: 20px; border-radius: 5px; text-align: center;">
+                                <p>🍽️</p>
+                                <p><strong>Casados</strong></p>
+                                <p style="font-size: 0.9em;">Completos y deliciosos</p>
+                            </div>
+                            <div style="background: #CE1126; color: white; padding: 20px; border-radius: 5px; text-align: center;">
+                                <p>🍗</p>
+                                <p><strong>Pollo Achiotado</strong></p>
+                                <p style="font-size: 0.9em;">Especialidad de la casa</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menú del Día -->
+                    <div class="content-box">
+                        <h3 style="color: royalblue;">MENÚ DEL DÍA</h3>
+                        <p><strong>Contenido:</strong> Platos disponibles hoy con precios</p>
+                        <p><strong>Elementos:</strong></p>
+                        <ul>
+                            <li>Foto de cada plato</li>
+                            <li>Nombre del platillo</li>
+                            <li>Descripción breve</li>
+                            <li>Precio en colones</li>
+                            <li>Botón "Ordenar"</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Blog Preview -->
+                    <div class="content-box">
+                        <h3 style="color: royalblue;">ÚLTIMAS RECETAS Y TIPS</h3>
+                        <p><strong>Contenido:</strong> Preview de 3 artículos recientes del blog</p>
+                        <p><strong>Temas:</strong> Recetas tradicionales, historia gastronómica, tips de cocina</p>
+                    </div>
+                    
+                    <!-- CTA Final -->
+                    <div class="content-box" style="background: linear-gradient(135deg, #CE1126 0%, #002B7F 100%); color: white; padding: 30px; text-align: center;">
+                        <h3 style="color: white; margin: 0 0 15px 0;">¿LISTO PARA DISFRUTAR?</h3>
+                        <p style="margin-bottom: 15px;">Visítanos o haz tu pedido</p>
+                        <p>[Botón: Ver Ubicación] [Botón: Hacer Pedido]</p>
+                    </div>
+                </div>
+                
+                <!-- FOOTER -->
+                <div class="wireframe-footer">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left;">
+                        <div>
+                            <h4 style="color: white;">CONTACTO</h4>
+                            <p style="font-size: 0.9em;">📞 +506 2xxx-xxxx</p>
+                            <p style="font-size: 0.9em;">✉️ info@sabortico.cr</p>
+                            <p style="font-size: 0.9em;">📍 [Ubicación del pueblo]</p>
+                        </div>
+                        <div>
+                            <h4 style="color: white;">HORARIO</h4>
+                            <p style="font-size: 0.9em;">Lun-Sáb: 6:00 AM - 6:00 PM</p>
+                            <p style="font-size: 0.9em;">Domingos: 7:00 AM - 3:00 PM</p>
+                        </div>
+                        <div>
+                            <h4 style="color: white;">SÍGUENOS</h4>
+                            <p style="font-size: 0.9em;">Facebook | Instagram | WhatsApp</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
+                </div>
+            </div>
+            
+            <!-- Descripción de elementos -->
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h3 style="color: royalblue;">Descripción de Elementos - Página Principal</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Header:</strong> Logo + nombre, colores de la bandera</li>
+                    <li><strong>Navegación:</strong> Menú horizontal, 6 enlaces (Inicio, Menú, Blog, Especiales, Nosotros, Contacto)</li>
+                    <li><strong>Hero Section:</strong> Imagen de plato típico, slogan, botón CTA</li>
+                    <li><strong>Quiénes Somos:</strong> Layout 50/50 con imagen del local + texto</li>
+                    <li><strong>Especialidades:</strong> Grid 3 columnas con íconos de platos típicos</li>
+                    <li><strong>Menú del Día:</strong> Cards con fotos, nombres, precios y botón ordenar</li>
+                    <li><strong>Blog Preview:</strong> 3 artículos sobre recetas y tradiciones</li>
+                    <li><strong>CTA Final:</strong> Gradiente con colores patrios, botones de acción</li>
+                    <li><strong>Footer:</strong> 3 columnas (contacto, horario, redes sociales)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SECCIÓN 6: MAQUETADO BLOG
+             ======================================== -->
+        <section>
+            <h2>📝 MAQUETADO - PÁGINA DE BLOG</h2>
+            
+            <h3 style="color: royalblue; margin-top: 30px;">A. PÁGINA PRINCIPAL DEL BLOG (Lista de Artículos)</h3>
+            <div class="wireframe">
+                <div class="wireframe-header">
+                    <h3 style="margin: 0;">SODA SABORTICO 🇨🇷</h3>
+                </div>
+                
+                <div class="wireframe-nav">
+                    <span>Inicio</span>
+                    <span>Menú</span>
+                    <span style="background: rgba(255,255,255,0.4);">Blog</span>
+                    <span>Especiales</span>
+                    <span>Nosotros</span>
+                    <span>Contacto</span>
+                </div>
+                
+                <div class="wireframe-content">
+                    <h2 style="color: royalblue; text-align: center; margin-bottom: 20px;">BLOG DE COCINA TICA</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+                        <!-- Área principal: Artículos -->
+                        <div>
+                            <!-- Categorías -->
+                            <div class="content-box" style="background: #e9ecef; padding: 15px;">
+                                <h4 style="color: royalblue;">CATEGORÍAS DEL BLOG</h4>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                                    <span style="background: #CE1126; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Todas</span>
+                                    <span style="background: #002B7F; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Recetas Tradicionales</span>
+                                    <span style="background: #002B7F; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Historia Gastronómica</span>
+                                    <span style="background: #002B7F; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Tips de Cocina</span>
+                                    <span style="background: #002B7F; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Ingredientes Típicos</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Grid de artículos -->
+                            <div class="blog-grid">
+                                <!-- Artículo 1 -->
+                                <div class="blog-card">
+                                    <div class="blog-image">📷 Imagen</div>
+                                    <p style="font-size: 0.8em; color: #666;">Recetas | 15 Sep 2025</p>
+                                    <h4 style="color: royalblue; margin: 10px 0;">Cómo hacer el gallo pinto perfecto</h4>
+                                    <p style="font-size: 0.9em;">Aprende los secretos del desayuno tico...</p>
+                                    <a href="#" style="color: #CE1126; font-weight: bold;">[Leer más →]</a>
+                                </div>
+                                
+                                <!-- Artículo 2 -->
+                                <div class="blog-card">
+                                    <div class="blog-image">📷 Imagen</div>
+                                    <p style="font-size: 0.8em; color: #666;">Historia | 12 Sep 2025</p>
+                                    <h4 style="color: royalblue; margin: 10px 0;">Origen del casado costarricense</h4>
+                                    <p style="font-size: 0.9em;">Descubre la historia de este plato...</p>
+                                    <a href="#" style="color: #CE1126; font-weight: bold;">[Leer más →]</a>
+                                </div>
+                                
+                                <!-- Artículo 3 -->
+                                <div class="blog-card">
+                                    <div class="blog-image">📷 Imagen</div>
+                                    <p style="font-size: 0.8em; color: #666"p>Nose | 10 Sep 2025</p>
+                                    <h4 style="color: royalblue; margin: 10px 0;">Nose</h4>
+                                    <p style="font-size: 0m9em;">Nose</p>
+                                    <a href="#" style="color: #CE1126; font-weight: bold;">[Leer más →]</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
     </div>
 </body>
 </html>
