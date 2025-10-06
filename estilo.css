@@ -295,3 +295,66 @@ tr:hover {
     border-radius: 5px;
     margin-top: 10px;
 }
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.menu-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.menu-description {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.menu-price {
+    font-weight: bold;
+    color: #CE1126;
+    font-size: 1.2em;
+    white-space: nowrap; /* Evita que el precio se parta en dos líneas */
+}
+.menu-price2 {
+     font-weight: bold;
+    color: #CE1126;
+    font-size: 1.2em;
+    white-space: nowrap;
+    /* Ensure no margin pushes it out of alignment */
+    margin: 0;
+}
+.menu-titulo {
+    text-align: center; /* Ensures "Gallo" is centered */
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.menu-titulo2 {
+    text-align: center; /* Centra el título 'Tortilla' */
+    font-size: 2em;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-bottom: none; /* Si quieres quitar la línea divisoria debajo del título */
+}
+.menu-item-detail2 {
+    display: block; 
+    width: 100%;
+    margin-bottom: 40px; 
+    padding: 0;
+}
+.menu-description2, .menu-price3 {
+    display: block; /* Asegura que la descripción y el precio también se apilen */
+    text-align: center; /* Centra la descripción y el precio si lo deseas */
+    padding: 5px 0;
+    margin: 0;
+}
+.menu-item-detail {
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Puts maximum space between the item and the price */
+    align-items: center; /* Vertically centers the text and price (good practice) */
+    padding: 5px 0; /* Add some padding if needed */
+}
