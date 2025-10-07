@@ -358,3 +358,48 @@ tr:hover {
     align-items: center; /* Vertically centers the text and price (good practice) */
     padding: 5px 0; /* Add some padding if needed */
 }
+.opiniones-barra {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 2px solid #e9ecef;
+  border-bottom: 2px solid #e9ecef;
+  overflow-x: auto; /* permite desplazamiento si hay muchas */
+}
+
+.opinion-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 250px;
+  flex-shrink: 0; /* evita que se encojan */
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.opinion-card:hover {
+  transform: translateY(-5px);
+}
+
+.opinion-card h4 {
+  color: royalblue;
+  font-size: 1em;
+  margin-bottom: 8px;
+}
+
+.opinion-card p {
+  font-size: 0.9em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.opinion-card .autor {
+  font-size: 0.8em;
+  color: #777;
+  display: block;
+}
+
