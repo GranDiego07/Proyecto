@@ -127,164 +127,90 @@
                     <!--
                     MENU
                     -->
-<div class="wireframe-content">
-    
-    <div class="content-box">
-        <h3 style="color: royalblue;">MENÚ</h3>
-        
-        <div class="menu-container">
-            <p class="menu-titulo2"><strong>Desayunos</strong></p>
-            
-            <img src="imagenes/Gallo-pinto-de-Costa-Rica-shutterstock_1148861354.webp" alt="Desayunos" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
-            
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Cachetona:</strong> Tortilla palmeada con frijoles molidos, natilla, torta de huevo y salchichón.
-                </p>
-                <p class="menu-price">₡2500</p>
-            </div>
-            
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Gallo pinto:</strong> carne en salsa o pollo achiotado, con huevo y plátano maduro.
-                </p>
-                <p class="menu-price">₡3000</p>
-            </div>
-        </div>
-        
-        <div class="menu-container" style="margin-top: 40px;">
-            <p class="menu-titulo2" style="font-size: 1.5em; border-bottom: 3px solid #e9ecef;"><strong>Extras</strong></p>
-            
-            <div class="menu-item">
-                <p class="menu-description">Huevo</p>
-                <p class="menu-price">₡500</p>
-            </div>
-            <div class="menu-item">
-                <p class="menu-description">Natilla</p>
-                <p class="menu-price">₡500</p>
-            </div>
-            <div class="menu-item">
-                <p class="menu-description">Queso</p>
-                <p class="menu-price">₡600</p>
-            </div>
-            <div class="menu-item">
-                <p class="menu-description">Plátano Maduro</p>
-                <p class="menu-price">₡500</p>
-            </div>
-            <div class="menu-item">
-                <p class="menu-description">Tocineta</p>
-                <p class="menu-price">₡800</p>
-            </div>
-        </div>
-
-
-        <div class="menu-container" style="margin-top: 40px;">
-            <p class="menu-titulo2"><strong>Tortillas</strong></p>
-
-            <img src="imagenes/tortilla frijol queso.jpg" alt="Tortillas" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
-
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Tortilla de queso:</strong> palmeada con frijoles molidos y queso.
-                </p>
-                <p class="menu-price">₡3500</p>
-            </div> 
-
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Tortilla palmeada:</strong> (pequeña o grande).
-                </p>
-                <p class="menu-price">₡500 o ₡800</p>
-            </div>
-
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Tortilla aliñada:</strong> (pequeña o grande).
-                </p>
-                <p class="menu-price">₡1000 o ₡1800</p>
-            </div>
-        </div>
-
-        <div class="menu-container" style="margin-top: 40px;">
-            <p class="menu-titulo2"><strong>Sandwiches</strong></p>
-
-            <img src="imagenes/sandwich.jpg" alt="Sandwiches" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
-            
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Pollo</strong> (con mayonesa, lechuga y tomate).
-                </p>
-                <p class="menu-price">₡2,500</p>
-            </div>
-
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Jamón y queso</strong> (clásico).
-                </p>
-                <p class="menu-price">₡2,500</p>
-            </div>
-
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Carne de res</strong> (desmechada en salsa).
-                </p>
-                <p class="menu-price">₡2,500</p>
-            </div>
-            
-            <div class="menu-item">
-                <p class="menu-description">
-                    <strong>Frijoles y huevo</strong> (opción vegetariana).
-                </p>
-                <p class="menu-price">₡2,500</p>
-            </div>
-        </div>
-
-        <div class="menu-container" style="margin-top: 40px;">
-            <p class="menu-titulo2"><strong>Gallos</strong></p>
-            
-            <div class="menu-item">
-                <p class="menu-description">Pollo achiotado</p>
-                <p class="menu-price">₡2300</p>
-            </div>
-
-            <div class="menu-item">
-                <p class="menu-description">Carne en Salsa</p>
-                <p class="menu-price">₡2500</p>
-            </div>
-
-            <div class="menu-item">
-                <p class="menu-description">Salchichón</p>
-                <p class="menu-price">₡1300</p>
-            </div>
-            
-            <div class="menu-item">
-                <p class="menu-description">Queso</p>
-                <p class="menu-price">₡1000</p>
-            </div>
-            
-            <div class="menu-item">
-                <p class="menu-description">Picadillo de papa</p>
-                <p class="menu-price">₡1500</p>
-            </div>
-            
-            <div class="menu-item">
-                <p class="menu-description">Torta Huevo</p>
-                <p class="menu-price">₡800</p>
-            </div>
-
-            <div class="menu-item">
-                <p class="menu-description">Chorizo</p>
-                <p class="menu-price">₡1000</p>
-            </div>
-        </div>
-        
-        <div class="content-box" style="background: linear-gradient(135deg, #CE1126 0%, #002B7F 100%); color: white; padding: 30px; text-align: center; margin-top: 40px;">
-            <h3 style="color: white; margin: 0 0 15px 0;">¿LISTO PARA DISFRUTAR?</h3>
-            <p style="margin-bottom: 15px;">Visítanos o haz tu pedido</p>
-        </div>
-    </div>
-    
-    </div>
+                    <div class="content-box">
+                        <h3 style="color: royalblue;">MENÚ</h3>
+                            <div class="menu-container">
+                                <p class="menu-titulo2"><strong>Desayunos</strong></p>
+                                    <img src="imagenes/Gallo-pinto-de-Costa-Rica-shutterstock_1148861354.webp" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                                     <p class="menu-item">
+                                        <strong>Cachetona: Tortilla palmeada con frijoles molidos, natilla, torta de huevo y salchichón </p>
+                                        <p class="menu-price">₡2500 </p>
+                                     </p>   
+                                 </div>   
+                            </div>
+                            <div class="menu-item">
+                                <img src="imagenes/unnamed.jpg" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                                <p class="menu-description">
+                                <strong>Gallo pinto: </strong> carne en salsa o pollo achiotado
+                            <p class="menu-price3">₡3000</p>
+                            </div>
+                            <div class="menu-item-detail">
+                                <p class="menu-titulo2"><strong>Extra</strong></p>
+                                <div class="menu-item-detail">
+                                <p class="menu-description2">
+                                    <strong>
+                                    Huevo <br>
+                                    Natilla <br>
+                                    Queso <br>
+                                    Plánato Maduro <br>
+                                    Tocineta
+                                </p>
+                                <p class="menu-price2">₡500 <br> ₡500 <br> ₡600 <br>₡500 <br>₡800</p>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="menu-item">
+                                <p class="menu-titulo"><strong>Sandwich</strong></p>
+                                <img src="imagenes/sandwich.jpg" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                                <div class="menu-item-detail">
+                                <p class="menu-description">
+                                <strong>Pollo <br> Jamón y queso <br> Carne res <br> Frijoles y huevo <br> Quesos <br> Salchichón
+                                </p>
+                                <p class="menu-price">₡2,500</p>
+                                </div>
+                            </div>
+                            <div class="menu-container">
+                                <p class="menu-titulo2"><strong>Tortilla</strong></p>
+                                 <div class="menu-item-detail2">
+                                    <img src="imagenes/tortilla frijol queso.jpg" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                                     <p class="menu-description2">
+                                        <strong>Cachetona: Tortilla palmeada con frijoles molidos, natilla, torta de huevo y salchichón </p>
+                                        <p class="menu-price3">₡3500 </p>
+                                     </p>   
+                                 </div>   
+                            </div>
+                            <div class="menu-item-detail2">
+                                <img src="imagenes/tortilla_palmeada.jpg" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                                <p class="menu-description2">
+                                <strong>Tortilla palmeada pequeña o grande</p>
+                            <p class="menu-price3">₡500 o ₡800 </p>
+                            </div>
+                            <div class="menu-item-detail2">
+                                <img src="imagenes/tortilla_allenado.jpg" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+                                <p class="menu-description2">
+                                <strong>Tortilla aliñada pequeña o grande</p>
+                            <p class="menu-price3">₡1000 o ₡1800 </p>
+                            </div>
+                            </div>
+                            <div class="menu-item">
+                                <p class="menu-titulo"><strong>Gallo</strong></p>
+                                 <div class="menu-item-detail">
+                                <p class="menu-description">
+                                <strong>
+                                Pollo achiotado <br>
+                                Carne Salsa <br>
+                                Salchichon <br>
+                                Queso <br>
+                                Picadillo de papa <br>
+                                Torta Huevo <br>
+                                Chorizo
+                                </p>
+                                <p class="menu-price2">₡2300 <br>₡2500 <br>₡1300 <br>₡1000 <br>₡1500 <br>₡800 <br>₡1000  </p>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    
                     <!-- CTA Final -->
                     <div class="content-box" style="background: linear-gradient(135deg, #CE1126 0%, #002B7F 100%); color: white; padding: 30px; text-align: center;">
                         <h3 style="color: white; margin: 0 0 15px 0;">¿LISTO PARA DISFRUTAR?</h3>
