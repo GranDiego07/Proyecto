@@ -3,93 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soda Sabortico</title>
+    <title>Menu - Soda SaborTico</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <h1>Proyecto Soda Sabortico</h1>
-        <p class="subtitle">ISW-512 Diseño de Aplicaciones Web</p>
-        <p class="subtitle"><strong>Diego Alberto Granados Hernandez</strong></p>
+        <h1> Soda SaborTico </h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="menu.html"class="active">Menu</a>
+            </nav>
     </header>
-    <!--
-    Logo de la empresa
-    -->
-    <div class="container">
-    <section>
-        <h2>Logo de la Empresa</h2>
-        <div class="logo-container">
-            <img src="imagenes/Logoproyecto.png" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
-        </div>
-        
-        <div class="justificación">
-            <h3>Justificación del Logo</h3>
-            <p style="margin: 15px 0; line-height: 1.8;">
-                <strong>Elemento del Diseño</strong>
-            </p>
-            <ul style="margin-left: 40px; line-height: 1.8;">
-                <li><strong>Diseño de carreta costarricense</strong>El logotipo busca replicar el diseño tradicional de la carreta costarricense con el propósito de representar y resaltar la autenticidad de la gastronomía típica del país.</li>
-                <li><strong>Colores patrios:</strong> Uso de azul, blanco y rojo que identifican a Costa Rica y refuerzan la identidad nacional del negocio.</li>
-                <li><strong>Tipografía tradicional:</strong> Letras que evocan la nostalgia y tradición de las sodas de pueblo costarricenses.</li>
-                <li><strong>Elementos decorativos:</strong> Detalles que recuerdan a las carretas típicas pintadas a mano, símbolo de la cultura y artesanía nacional.</li>
-            </ul>
-            <p style="margin: 15px 0; line-height: 1.8;">
-            <strong>Concepto general:</strong> El logo transmite tradición, autenticidad y orgullo costarricense. Conecta inmediatamente con el público que busca comida típica de calidad en un ambiente familiar y acogedor.                
-            </p>
-        </div>
-    </section>
-    
-    <!--
-    Informacion de la empresa
-    -->
-    <div class="container">
-    <section>
-        <h2>INFORMACION DE LA EMPRESA</h2>
-        <div class="empresa-info">
-            <h3>Nombre de la Empresa</h3>
-            <p style="font-size: 1.8em; font-weight: bold; color: royalblue; margin: 10px 0;">Sabortico</p>
-            <p style="font-size: italic; font-weight: bold; color: #000;">Soda</p>
-        </div>
-    </section>
-    <section>
-        <!--
-        Area Comercial de la empresa
-        -->
-        <h2>AREA COMERCIAL DE LA EMPRESA</h2>
-        <p style="font-size: 1.1em;line-height: 1.8;">
-            <strong>Sabortico</strong> es una soda de pueblo con especialidad en comida costarricense con precios justos y comida de buena calidad. La soda se dedica a:
-        </p>
-        <ul style="margin: 20px 0 20px 40px; font-size: 1.1em; line-height: 1.8;">
-            <li><strong>Venta de Desayuno</strong></li>
-            <li><strong>Venta de Almuerzos</strong></li>
-            <li><strong>Pollo Achiotado</strong></li>
-            <li><strong>Servicios Express</strong></li>
-        </ul>
-        <p style="font-size: 1.1em; line-height: 1.8;">
-            El negocio combina la tradición de comida costarricense con prácticas modernas de sostenibilidad.            
-        </p>
-    </section>
-    <section>
+    <main>
+        <h2>Nuestro Menú</h2>
+        <section>
             <h2>Soda SaborTico</h2>
-            
-            <div class="wireframe">
-                <!-- HEADER -->
-                <div class="wireframe-header">
-                    <h3 style="margin: 0; font-size: 1.5em;">SODA SABORTICO 🇨🇷</h3>
-                    <p style="margin: 5px 0 0 0; opacity: 0.9; color: #000;">Sabor Auténtico de Costa Rica</p>
-                </div>
-                
-                <!-- NAVEGACIÓN -->
-                <div class="wireframe-nav">
-                    <button class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</button>
-                    <button class="nav-btn" onclick="cambiarPagina('nosotros') ">Nosotros</button>
-                    <button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</button>
-                    <button class="nav-btn" onclick="cambiarPagina('blog') ">Blog</button>
-                    <button class="nav-btn" onclick="cambiarPagina('contacto') ">Contacto</button>
-                    <button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</button>
-                    <button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</button>
-                </div>                   
-            <!-- Especialidades -->
             <div class="content-box">
                 <h3 style="color: royalblue;">NUESTRAS ESPECIALIDADES</h3>
                 <div class="especialidades-grid">
@@ -290,119 +218,6 @@
             </div>
             </div>
         </div>
-                    <!-- CTA Final -->
-                    <div class="content-box" style="background: linear-gradient(135deg, #CE1126 0%, #002B7F 100%); color: white; padding: 30px; text-align: center;">
-                        <h3 style="color: white; margin: 0 0 15px 0;">¿LISTO PARA DISFRUTAR?</h3>
-                        <p style="margin-bottom: 15px;">Visítanos o haz tu pedido</p>
-                    </div>
-                </div>
-                
-                <!-- FOOTER -->
-                <div class="wireframe-footer">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left;">
-                        <div>
-                            <h4 style="color: white;">CONTACTO</h4>
-                            <p style="font-size: 0.9em;">📞 +506 2446-5665 o +506 85116860 </p>
-                            <p style="font-size: 0.9em;">📍 75mts norte del la iglesia de Rio Grande, Concepcion, Atenas, Alajuela</p>
-                        </div>
-                        <div>
-                            <h4 style="color: white;">HORARIO</h4>
-                            <p style="font-size: 0.9em;">Lun-Sáb: 6:00 AM - 4:00 PM</p>
-                            <p style="font-size: 0.9em;">Sab: 6:00 AM - 1:00 PM</p>
-                        </div>
-                        <div>
-                            <h4 style="color: white;">SÍGUENOS</h4>
-                            <p style="font-size: 0.9em;">Facebook | Instagram | WhatsApp</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 6: MAQUETADO BLOG -->
-        <section>
-            <h2>📝 BLOG</h2>
-            
-            <h3 style="color: royalblue; margin-top: 30px;"> BLOG</h3>
-            <div class="wireframe">
-                <div class="wireframe-header">
-                    <h3 style="margin: 0;">SODA SABORTICO 🇨🇷</h3>
-                </div>
-                <div class="wireframe-nav">
-                    <span>Inicio</span>
-                    <span>Menú</span>
-                    <span style="background: rgba(255,255,255,0.4);">Blog</span>
-                    <span>Especiales</span>
-                    <span>Nosotros</span>
-                    <span>Contacto</span>
-                </div>
-                <div class="wireframe-content">
-                    <h2 style="color: royalblue; text-align: center; margin-bottom: 20px;">BLOG DE COCINA TICA</h2>
-                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
-                        <!-- Área principal: Artículos -->
-                        <div>
-                            <!-- Categorías -->
-                            <div class="content-box" style="background: #e9ecef; padding: 15px;">
-                                <h4 style="color: royalblue;">CATEGORÍAS DEL BLOG</h4>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-                                    <span style="background: #CE1126; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Todas</span>
-                                    <span style="background: #002B7F; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Opniones</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Grid de artículos -->
-                           <div class="opiniones-barra">
-                                <div class="opinion-card">
-                                <h4>Cómo hacer el gallo pinto perfecto</h4>
-                                <p>“Aprendí a preparar el desayuno tico, ¡quedó delicioso!”</p>
-                                <span class="autor">– Recetas | 15 Sep 2025</span>
-                            </div>
-                                <div class="opinion-card">
-                                <h4>Origen del casado costarricense</h4>
-                                <p>“Nunca imaginé que este plato tuviera tanta historia.”</p>
-                                <span class="autor">– Historia | 12 Sep 2025</span>
-                            </div>
-                            <div class="opinion-card">
-                                <h4>Mi plato favorito</h4>
-                                <p>“El casado siempre será mi comida preferida.”</p>
-                                <span class="autor">– Opiniones | 10 Sep 2025</span>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    </div>
-    </div>
-    <script>
-        function cambiarPagina(nombrePagina) {
-            // Ocultar todas las páginas
-            const paginas = document.querySelectorAll('.page');
-            paginas.forEach(pagina => {
-                pagina.classList.remove('active');
-            });
-
-            // Remover clase active de todos los botones
-            const botones = document.querySelectorAll('.nav-btn');
-            botones.forEach(boton => {
-                boton.classList.remove('active');
-            });
-
-            // Mostrar la página seleccionada
-            const paginaSeleccionada = document.getElementById(nombrePagina);
-            if (paginaSeleccionada) {
-                paginaSeleccionada.classList.add('active');
-            }
-
-            // Marcar el botón como activo
-            event.target.classList.add('active');
-
-            // Scroll suave al inicio
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+    </main>
 </body>
 </html>
