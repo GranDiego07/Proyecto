@@ -8,78 +8,68 @@
 </head>
 <body>
     <header>
-        <h1> Soda SaborTico </h1>
+        <h1>Soda SaborTico</h1>
     </header>
-    <div class="wireframe">
-        <!-- NAVEGACIÓN -->
-        <div class="wireframe-nav">
-            <a href="index.html" button class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</a>
-            <a href="menu.html" button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
-            <a href="blog.html" button class="nav-btn" onclick="cambiarPagina('blog') ">Blog</a>
-            <button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</button>
-            <a href="acercade.html" button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
-        </div> 
 
-        <section>
-            <h2>📝 BLOG</h2>
-            <div class="wireframe">
-                <div class="wireframe-content">
-                    <h2 style="color: royalblue; text-align: center; margin-bottom: 20px;">Nuestro Blog</h2>
-                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
-                        <!-- Área principal: Artículos -->
-                        <div>
-                            <!-- Categorías -->
-                            <div class="content-box" style="background: #e9ecef; padding: 15px;">
-                                <h4 style="color: royalblue;">CATEGORÍAS</h4>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
-                                    <span style="background: #CE1126; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Todas</span>
-                                    <span style="background: #002B7F; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em;">Opniones</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Grid de artículos -->
-                            <div class="opiniones-barra">
-                                <div class="opinion-card">
-                                <h4>Cómo hacer el gallo pinto perfecto</h4>
-                                <p>“Aprendí a preparar el desayuno tico, ¡quedó delicioso!”</p>
-                                <span class="autor">– Recetas | 15 Sep 2025</span>
-                            </div>
-                                <div class="opinion-card">
-                                <h4>Origen del casado costarricense</h4>
-                                <p>“Nunca imaginé que este plato tuviera tanta historia.”</p>
-                                <span class="autor">– Historia | 12 Sep 2025</span>
-                            </div>
-                            <div class="opinion-card">
-                                <h4>Mi plato favorito</h4>
-                                <p>“El casado siempre será mi comida preferida.”</p>
-                                <span class="autor">– Opiniones | 10 Sep 2025</span>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- NAVEGACIÓN -->
+    <div class="wireframe-nav">
+        <a href="index.html" class="nav-btn">Inicio</a>
+        <a href="menu.html" class="nav-btn">Menú</a>
+        <a href="blog.html" class="nav-btn">Blog</a>
+        <a href="preguntasfrecuentes.html" class="nav-btn">Preguntas Frecuentes</a>
+        <a href="acercade.html" class="nav-btn">Acerca De</a>
+    </div>
 
-                </div>
-                <!-- FOOTER -->
-                <div class="wireframe-footer">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: left;">
-                        <div>
-                            <h4 style="color: white;">CONTACTO</h4>
-                            <p style="font-size: 0.9em;">📞 +506 2446-5665 o +506 8511-6860 </p>
-                            <p style="font-size: 0.9em;">📍 75mts norte del la iglesia de Rio Grande, Concepcion, Atenas, Alajuela</p>
-                        </div>
-                        <div>
-                            <h4 style="color: white;">HORARIO</h4>
-                            <p style="font-size: 0.9em;">Lun-Sáb: 6:00 AM - 4:00 PM</p>
-                            <p style="font-size: 0.9em;">Sab: 6:00 AM - 1:00 PM</p>
-                        </div>
-                        <div>
-                            <h4 style="color: white;">SÍGUENOS</h4>
-                            <p style="font-size: 0.9em;">Facebook | Instagram | WhatsApp</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
-                </div>
+    <section>
+        <h2>📝 BLOG</h2>
+        <div class="content-box">
+            <h4 style="color: royalblue;">CATEGORÍAS</h4>
+            <div class="categorias">
+                <span class="categoria">Todas</span>
+                <span class="categoria">Opiniones</span>
+                <span class="categoria">Recetas</span>
+                <span class="categoria">Historia</span>
             </div>
-        </section>
+        </div>
+
+        <div class="opiniones-barra">
+            <div class="opinion-card">
+                <h4>Cómo hacer el gallo pinto perfecto</h4>
+                <p>“Aprendí a preparar el desayuno tico, ¡quedó delicioso!”</p>
+                <span class="autor">– Recetas | 15 Sep 2025</span>
+            </div>
+            <div class="opinion-card">
+                <h4>Origen del casado costarricense</h4>
+                <p>“Nunca imaginé que este plato tuviera tanta historia.”</p>
+                <span class="autor">– Historia | 12 Sep 2025</span>
+            </div>
+            <div class="opinion-card">
+                <h4>Mi plato favorito</h4>
+                <p>“El casado siempre será mi comida preferida.”</p>
+                <span class="autor">– Opiniones | 10 Sep 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="wireframe-footer">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div>
+                <h4>CONTACTO</h4>
+                <p>📞 +506 2446-5665 o +506 8511-6860</p>
+                <p>📍 75mts norte del la iglesia de Rio Grande, Concepción, Atenas, Alajuela</p>
+            </div>
+            <div>
+                <h4>HORARIO</h4>
+                <p>Lun-Sáb: 6:00 AM - 4:00 PM</p>
+                <p>Sáb: 6:00 AM - 1:00 PM</p>
+            </div>
+            <div>
+                <h4>SÍGUENOS</h4>
+                <p>Facebook | Instagram | WhatsApp</p>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
+    </div>
 </body>
 </html>

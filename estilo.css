@@ -454,3 +454,42 @@ tr:hover {
         display: block;
         margin: 0 auto;
     }
+    /* ========================================
+   CATEGORÍAS DEL BLOG - RESPONSIVE
+   ======================================== */
+.categorias {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    justify-content: flex-start;
+}
+
+.categoria {
+    background: #CE1126; /* Rojo bandera */
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.categoria:hover {
+    background: #002B7F; /* Azul bandera */
+    transform: scale(1.05);
+}
+
+/* Modo vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+    .categorias {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .categoria {
+        width: fit-content;
+    }
+}
