@@ -425,3 +425,32 @@ tr:hover {
     height: epx;
     background: #1877f2;
 }
+
+ .especialidades-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .especialidades-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .especialidad-card {
+        background: royalblue;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .especialidad-card img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
