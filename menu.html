@@ -9,15 +9,22 @@
 <body>
     <header>
         <h1> Soda SaborTico </h1>
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="menu.html"class="active">Menu</a>
-            </nav>
     </header>
+    <div class="wireframe">
+        <!-- NAVEGACIÓN -->
+        <div class="wireframe-nav">
+            <a href="index.html" class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</a>
+            <!--<button class="nav-btn" onclick="cambiarPagina('nosotros') ">Nosotros</button>-->
+            <a href="menu.html" class="active" button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
+            <button class="nav-btn" onclick="cambiarPagina('blog') ">Blog</button>
+            <button class="nav-btn" onclick="cambiarPagina('contacto') ">Contacto</button>
+            <button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</button>
+            <a href="acercade.html"button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
+        </div>      
     <main>
         <h2>Nuestro Menú</h2>
         <section>
-            <h2>Soda SaborTico</h2>
+            
             <div class="content-box">
                 <h3 style="color: royalblue;">NUESTRAS ESPECIALIDADES</h3>
                 <div class="especialidades-grid">
