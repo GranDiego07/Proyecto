@@ -10,16 +10,14 @@
     <header>
         <h1>Soda SaborTico</h1>
     </header>
-
     <!-- NAVEGACIÓN -->
     <div class="wireframe-nav">
-        <a href="index.html" class="nav-btn">Inicio</a>
-        <a href="menu.html" class="nav-btn">Menú</a>
-        <a href="blog.html" class="nav-btn">Blog</a>
+        <a href="index.html" class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</a>
+        <a href="menu.html" button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
+        <a href="blog.html" button class="nav-btn" onclick="cambiarPagina('blog') ">Blog</a>
         <a href="preguntasfrecuentes.html"button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</a>
-        <a href="acercade.html" class="nav-btn">Acerca De</a>
+        <a href="acercade.html"button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
     </div>
-
     <section>
         <h2>📝 BLOG</h2>
         <div class="content-box">
@@ -61,8 +59,8 @@
             </div>
             <div>
                 <h4>HORARIO</h4>
-                <p>Lun-Sáb: 6:00 AM - 4:00 PM</p>
-                <p>Sáb: 6:00 AM - 1:00 PM</p>
+                <p style="font-size: 0.9em;">Lun-Vie: 6:00 AM - 4:00 PM</p>
+                <p style="font-size: 0.9em;">Sáb: 6:00 AM - 1:00 PM</p>
             </div>
             <div>
                 <h4>SÍGUENOS</h4>
@@ -74,5 +72,28 @@
         </div>
         <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
     </div>
+    <script>
+    function cambiarPagina(nombrePagina) {
+    // Ocultar todas las páginas
+    const paginas = document.querySelectorAll('.page');
+    paginas.forEach(pagina => {
+        pagina.classList.remove('active');
+        });
+    // Remover clase active de todos los botones
+    const botones = document.querySelectorAll('.nav-btn');
+    botones.forEach(boton => {
+    boton.classList.remove('active');
+    });
+    // Mostrar la página seleccionada
+    const paginaSeleccionada = document.getElementById(nombrePagina);
+    if (paginaSeleccionada) {
+    paginaSeleccionada.classList.add('active');
+    }
+    // Marcar el botón como activo
+    event.target.classList.add('active');
+    // Scroll suave al inicio
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
 </body>
 </html>
