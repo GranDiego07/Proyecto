@@ -23,7 +23,7 @@
     <section>
         <h2>Logo de la Empresa</h2>
         <div class="logo-container">
-            <img src="imagenes/Logoproyecto.png" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
+            <img src="../imagenes/Logoproyecto.png" alt="Soda Sabortico" style="max-width: 250px; height: auto; display: block; margin: 0 auto;">
         </div>
         
         <div class="justificación">
@@ -85,28 +85,6 @@
         <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
     </div>
 </div>
-    <script>
-    function cambiarPagina(nombrePagina) {
-    // Ocultar todas las páginas
-    const paginas = document.querySelectorAll('.page');
-    paginas.forEach(pagina => {
-        pagina.classList.remove('active');
-        });
-    // Remover clase active de todos los botones
-    const botones = document.querySelectorAll('.nav-btn');
-    botones.forEach(boton => {
-    boton.classList.remove('active');
-    });
-    // Mostrar la página seleccionada
-    const paginaSeleccionada = document.getElementById(nombrePagina);
-    if (paginaSeleccionada) {
-    paginaSeleccionada.classList.add('active');
-    }
-    // Marcar el botón como activo
-    event.target.classList.add('active');
-    // Scroll suave al inicio
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    </script>
+<a href="script.js"></a>
 </body>
 </html>
