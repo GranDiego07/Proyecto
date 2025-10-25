@@ -1,9 +1,10 @@
 /* ========================================
-   SODA SABORTICO - ESTILOS OPTIMIZADOS
-   ======================================== */
-
-/* ========================================
    RESET Y CONFIGURACIÓN GLOBAL
+   ========================================
+   Elimina márgenes y padding por defecto de todos los elementos
+   para tener control total sobre el espaciado.
+   box-sizing: border-box hace que el padding y border se incluyan
+   en el ancho total del elemento.
    ======================================== */
 * {
     margin: 0;
@@ -12,169 +13,213 @@
     font-family: Arial, sans-serif;
 }
 
+/* ========================================
+   VARIABLES CSS (CUSTOM PROPERTIES)
+   ========================================
+   Define colores y valores reutilizables en todo el sitio.
+   Ventajas: fácil mantenimiento, cambios globales desde un solo lugar,
+   y mejor organización del código.
+   Se acceden usando var(--nombre-variable)
+   ======================================== */
 :root {
-    /* Colores de la bandera de Costa Rica */
-    --azul-bandera: #002B7F;
-    --rojo-bandera: #CE1126;
-    --blanco: #FFFFFF;
+    /* Colores de la bandera de Costa Rica - Representan la identidad nacional */
+    --azul-bandera: #002B7F;      /* Azul oscuro de la bandera */
+    --rojo-bandera: #CE1126;      /* Rojo oficial de la bandera */
+    --blanco: #FFFFFF;            /* Blanco puro */
     
-    /* Colores adicionales */
-    --royal-blue: royalblue;
-    --gris-claro: #f8f9fa;
-    --gris-medio: #e9ecef;
-    --gris-oscuro: #333;
-    --rojo-acento: #F04435;
+    /* Colores adicionales del esquema de diseño */
+    --royal-blue: royalblue;      /* Azul royal para elementos destacados */
+    --gris-claro: #f8f9fa;        /* Gris muy claro para fondos suaves */
+    --gris-medio: #e9ecef;        /* Gris medio para bordes y separadores */
+    --gris-oscuro: #333;          /* Gris oscuro para texto principal */
+    --rojo-acento: #F04435;       /* Rojo de acento (ya no usado en fondo) */
+    --fondo-crema: #FFF8E7;       /* Crema suave - color de fondo principal del sitio */
+    --azul-nav: #0056b3;          /* Azul profesional para navegación */
+    --azul-nav-hover: #003d82;    /* Azul más oscuro para efecto hover */
     
-    /* Espaciados */
-    --spacing-sm: 10px;
-    --spacing-md: 20px;
-    --spacing-lg: 30px;
-    --spacing-xl: 40px;
+    /* Sistema de espaciado consistente - facilita mantener proporciones */
+    --spacing-sm: 10px;           /* Espaciado pequeño */
+    --spacing-md: 20px;           /* Espaciado medio */
+    --spacing-lg: 30px;           /* Espaciado grande */
+    --spacing-xl: 40px;           /* Espaciado extra grande */
     
-    /* Bordes */
-    --border-radius: 8px;
-    --border-radius-lg: 10px;
-}
-
-body {
-    line-height: 1.6;
-    color: var(--gris-oscuro);
-    background: var(--rojo-acento);
-    font-size: 16px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-    background: var(--rojo-acento);
+    /* Bordes redondeados - define el estilo visual de las cajas */
+    --border-radius: 8px;         /* Radio estándar */
+    --border-radius-lg: 10px;     /* Radio grande para elementos destacados */
 }
 
 /* ========================================
-   HEADER - BANDERA DE COSTA RICA
+   ESTILOS DEL BODY
+   ========================================
+   Configuración base para toda la página
+   ======================================== */
+body {
+    line-height: 1.6;                    /* Altura de línea para mejor legibilidad */
+    color: var(--gris-oscuro);           /* Color de texto por defecto */
+    background: var(--fondo-crema);      /* Fondo crema cálido en toda la página */
+    font-size: 16px;                     /* Tamaño de fuente base */
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ========================================
+   Limita el ancho del contenido y lo centra
+   ======================================== */
+.container {
+    max-width: 1200px;                   /* Ancho máximo para no extenderse demasiado */
+    margin: 0 auto;                      /* Centra horizontalmente */
+    padding: var(--spacing-md);          /* Espaciado interno */
+    background: var(--fondo-crema);      /* Mantiene el fondo crema */
+}
+
+/* ========================================
+   HEADER (ENCABEZADO PRINCIPAL)
+   ========================================
+   Contiene el logo y la navegación principal.
+   Usa flexbox para alinear elementos horizontalmente.
    ======================================== */
 header {
-    background: linear-gradient(
-        180deg,
-        var(--azul-bandera) 0%, var(--azul-bandera) 15%,
-        var(--blanco) 25%, var(--blanco) 40%,
-        var(--rojo-bandera) 50%, var(--rojo-bandera) 60%,
-        var(--blanco) 70%, var(--blanco) 85%,
-        var(--azul-bandera) 100%
-    );
-    padding: var(--spacing-xl) var(--spacing-md);
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    border: 3px solid var(--azul-bandera);
+    background: white;                   /* Fondo blanco limpio */
+    padding: 20px 40px;                  /* Espaciado interno (vertical horizontal) */
+    border: none;                        /* Sin borde */
+    display: flex;                       /* Flexbox para layout horizontal */
+    align-items: center;                 /* Alinea verticalmente al centro */
+    justify-content: space-between;      /* Distribuye espacio entre logo y navegación */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
+    margin-bottom: 30px;                 /* Separación del contenido siguiente */
+    gap: 30px;                          /* Espacio entre elementos flex */
 }
 
+/* ========================================
+   TÍTULOS PRINCIPALES
+   ======================================== */
+
+/* H1 - Título principal del sitio (logo/nombre) */
 h1 {
-    font-size: 2.5em;
-    margin-bottom: var(--spacing-sm);
-    color: var(--azul-bandera);
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    font-size: 2.5em;                   /* Tamaño grande y destacado */
+    margin: 0;                          /* Sin margen */
+    color: var(--azul-bandera);         /* Color azul de la bandera */
+    text-shadow: none;                  /* Sin sombra de texto */
 }
 
+/* Subtítulo (ya no se usa en el header actual) */
 .subtitle {
     font-size: 1.1em;
     font-weight: bold;
     color: var(--gris-oscuro);
-    opacity: 0.9;
+    opacity: 0.9;                       /* Ligeramente transparente */
 }
 
 /* ========================================
-   TIPOGRAFÍA
+   SISTEMA DE TIPOGRAFÍA
+   ========================================
+   Define la jerarquía visual de los títulos
    ======================================== */
+
+/* H2 - Títulos de sección */
 h2 {
-    color: var(--royal-blue);
-    font-size: 2em;
-    margin-bottom: var(--spacing-md);
-    border-bottom: 3px solid var(--rojo-bandera);
-    padding-bottom: var(--spacing-sm);
+    color: var(--royal-blue);           /* Azul royal para destacar */
+    font-size: 2em;                     /* Grande pero menor que H1 */
+    margin-bottom: var(--spacing-md);   /* Espacio debajo */
+    border-bottom: 3px solid var(--rojo-bandera); /* Línea roja debajo */
+    padding-bottom: var(--spacing-sm);  /* Espacio entre texto y línea */
 }
 
+/* H3 - Sub-títulos */
 h3 {
-    color: var(--azul-bandera);
-    font-size: 1.5em;
-    margin: var(--spacing-md) 0 15px 0;
+    color: var(--azul-bandera);         /* Azul bandera */
+    font-size: 1.5em;                   /* Tamaño medio */
+    margin: var(--spacing-md) 0 15px 0; /* Márgenes arriba y abajo */
 }
 
+/* Título especial para menú */
 .menu-titulo2 {
-    text-align: center;
-    font-size: 2em;
-    padding: 15px 0;
-    margin-bottom: var(--spacing-md);
-    border-bottom: none;
+    text-align: center;                 /* Centrado */
+    font-size: 2em;                     /* Grande */
+    padding: 15px 0;                    /* Espaciado vertical */
+    margin-bottom: var(--spacing-md);   
+    border-bottom: none;                /* Sin línea inferior */
 }
 
 /* ========================================
-   SECCIONES
+   SECCIONES DE CONTENIDO
+   ========================================
+   Cajas blancas que contienen el contenido principal
    ======================================== */
 section {
-    border: 3px solid var(--royal-blue);
-    margin-bottom: 50px;
-    padding: var(--spacing-lg);
-    background: var(--blanco);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;  /* Limita el ancho para que no llegue a los límites */
-    margin: var(--spacing-lg) auto;  /* Centrado horizontalmente con márgenes superiores/inferiores */
-    width: 100%;  /* Ocupa el ancho disponible hasta el max-width */
+    border: 3px solid var(--royal-blue);      /* Borde azul grueso */
+    margin-bottom: 50px;                       /* Separación entre secciones */
+    padding: var(--spacing-lg);                /* Espaciado interno generoso */
+    background: var(--blanco);                 /* Fondo blanco */
+    border-radius: var(--border-radius-lg);    /* Esquinas redondeadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    max-width: 1200px;                         /* Ancho máximo */
+    margin: var(--spacing-lg) auto;            /* Centrado con márgenes */
+    width: 100%;                               /* Ocupa todo el ancho disponible */
 }
 
+/* Caja de información de empresa con gradiente */
 .empresa-info {
-    background: linear-gradient(135deg, var(--gris-claro) 0%, var(--gris-medio) 100%);
+    background: linear-gradient(135deg, var(--gris-claro) 0%, var(--gris-medio) 100%); /* Gradiente diagonal */
     padding: 25px;
     border-radius: var(--border-radius);
-    border-left: 5px solid var(--royal-blue);
-    max-width: 1200px;  /* Limita el ancho para que no llegue a los límites */
-    margin: 0 auto;  /* Centrado horizontalmente */
+    border-left: 5px solid var(--royal-blue); /* Barra izquierda azul */
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
 }
 
 /* ========================================
-   LOGO
+   CONTENEDOR DE LOGO
+   ========================================
+   Área especial para mostrar el logo
    ======================================== */
 .logo-container {
-    text-align: center;
-    padding: var(--spacing-xl);
-    background: var(--blanco);
-    border-radius: var(--border-radius-lg);
-    margin: var(--spacing-md) 0;
+    text-align: center;                        /* Centra el contenido */
+    padding: var(--spacing-xl);                /* Espaciado generoso */
+    background: var(--blanco);                 /* Fondo blanco */
+    border-radius: var(--border-radius-lg);    
+    margin: var(--spacing-md) 0;               /* Márgenes verticales */
 }
 
+/* Caja de justificación del logo */
 .justificacion {
-    background: var(--gris-claro);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    margin-top: var(--spacing-md);
+    background: var(--gris-claro);             /* Fondo gris claro */
+    padding: var(--spacing-md);                
+    border-radius: var(--border-radius);       
+    margin-top: var(--spacing-md);             /* Espacio arriba */
 }
 
 /* ========================================
    PALETA DE COLORES
+   ========================================
+   Grid para mostrar los colores del sitio
    ======================================== */
 .paleta-colores {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-md);
+    display: grid;                                        /* Layout de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: var(--spacing-md);                               /* Espacio entre elementos */
     margin: var(--spacing-md) 0;
 }
 
+/* Caja individual de color */
 .color-box {
     text-align: center;
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+/* Muestra del color */
 .color-sample {
     width: 100%;
-    height: 150px;
+    height: 150px;                             /* Altura fija */
     border-radius: var(--border-radius);
     margin-bottom: 15px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna */
 }
 
+/* Información del color */
 .color-info {
     background: var(--blanco);
     padding: 15px;
@@ -187,38 +232,42 @@ section {
 }
 
 /* ========================================
-WIREFRAMES
-======================================== */
+   WIREFRAMES (PROTOTIPOS VISUALES)
+   ========================================
+   Estructuras para mostrar diseños
+   ======================================== */
 .wireframe {
-    border: 3px solid var(--royal-blue);  /* Mantiene para otras usos */
+    border: 3px solid var(--royal-blue);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-md);
     margin: var(--spacing-md) auto;
-    background: var(--blanco);  /* Mantiene blanco para otras secciones */
+    background: var(--blanco);
     max-width: 1200px;
     width: 100%;
     align-content: center;
 }
 
-
-
+/* Barra de navegación en wireframes */
 .wireframe-nav {
-    background: var(--royal-blue);
-    padding: 15px;
-    border: 3px solid var(--royal-blue);  /* Movido de .wireframe para borde exterior azul */
-    border-radius: var(--border-radius-lg);  /* Movido para redondeo en el azul */
-    margin-bottom: 15px;
-    color: var(--blanco);
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;  /* Limita el ancho para que el azul no llegue a los límites */
-    margin: var(--spacing-md) auto;  /* Centrado con márgenes superiores/inferiores */
+    background: var(--azul-nav);               /* Azul profesional */
+    padding: 20px 15px;                        /* Espaciado interno */
+    border: 3px solid var(--azul-nav);         /* Borde del mismo color */
+    border-radius: var(--border-radius-lg);    
+    margin-bottom: 15px;                       
+    color: var(--blanco);                      /* Texto blanco */
+    display: flex;                             /* Flexbox para layout */
+    justify-content: space-around;             /* Distribuye elementos uniformemente */
+    align-items: center;                       /* Alinea verticalmente */
+    flex-wrap: wrap;                           /* Permite salto de línea en móviles */
+    gap: 15px;                                 /* Espacio entre botones */
+    max-width: 1200px;
+    margin: var(--spacing-md) auto;
 }
 
+/* Header con diseño de bandera */
 .wireframe-header {
     background: linear-gradient(
-        180deg,
+        180deg,                                /* Gradiente vertical */
         var(--azul-bandera) 0%, var(--azul-bandera) 15%,
         var(--blanco) 25%, var(--blanco) 40%,
         var(--rojo-bandera) 50%, var(--rojo-bandera) 60%,
@@ -232,205 +281,246 @@ WIREFRAMES
     margin-bottom: 15px;
 }
 
+/* Elementos individuales en navegación wireframe */
 .wireframe-nav span {
     padding: 5px 15px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);     /* Fondo semi-transparente */
     border-radius: 3px;
     margin: 5px;
 }
 
+/* Área de contenido en wireframes */
 .wireframe-content {
-    min-height: 400px;
+    min-height: 400px;                         /* Altura mínima */
     padding: var(--spacing-md);
     background: var(--gris-claro);
     border-radius: 5px;
     margin-bottom: 15px;
 }
 
+/* Caja de contenido general */
 .content-box {
     background: var(--blanco);
     padding: 15px;
     border-radius: 5px;
-    border-left: 4px solid var(--rojo-bandera);
-    max-width: 1200px;  /* Limita el ancho para que no llegue a los límites */
-    margin: var(--spacing-lg) auto;  /* Centrado horizontalmente con márgenes superiores/inferiores */
-    width: 100%;  /* Ocupa el ancho disponible hasta el max-width */
+    border-left: 4px solid var(--rojo-bandera); /* Barra roja izquierda */
+    max-width: 1200px;
+    margin: var(--spacing-lg) auto;
+    width: 100%;
 }
 
+/* Footer en wireframes */
 .wireframe-footer {
-    background: var(--azul-bandera);
-    color: var(--blanco);
+    background: var(--azul-bandera);           /* Azul oscuro */
+    color: var(--blanco);                      /* Texto blanco */
     padding: var(--spacing-md);
     text-align: center;
     border-radius: 5px;
 }
+
 /* ========================================
-   NAVEGACIÓN
+   SISTEMA DE NAVEGACIÓN
+   ========================================
+   Botones de navegación principal del sitio
    ======================================== */
+
+/* Contenedor de botones */
 .nav-buttons {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex: 1;
-    background-color: var(--royal-blue);
+    display: flex;                             /* Layout horizontal */
+    gap: 15px;                                 /* Espacio entre botones (mejorado) */
+    justify-content: center;                   /* Centra los botones */
+    padding: 0 20px;                           /* Espaciado lateral */
 }
 
+/* Estilo de cada botón de navegación */
 .nav-btn {
-    padding: 12px 24px;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--blanco);
-    transition: all 0.3s ease;
-    position: relative;
+    padding: 12px 28px;                        /* Espaciado interno (mejorado) */
+    background-color: var(--azul-nav);         /* Azul profesional */
+    border: none;                              /* Sin borde */
+    border-radius: var(--border-radius);       /* Esquinas redondeadas */
+    cursor: pointer;                           /* Cursor de mano al hover */
+    font-size: 15px;                           
+    font-weight: 600;                          /* Texto semi-negrita */
+    color: var(--blanco);                      /* Texto blanco */
+    transition: all 0.3s ease;                 /* Transición suave de todos los cambios */
+    position: relative;                        /* Para posicionar pseudo-elementos */
+    text-decoration: none;                     /* Sin subrayado en enlaces */
+    display: inline-block;                     
 }
 
+/* Efecto hover en botones */
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+    background: var(--azul-nav-hover);         /* Azul más oscuro */
+    transform: translateY(-2px);               /* Mueve hacia arriba 2px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra */
 }
 
+/* Botón activo (página actual) */
 .nav-btn.active {
-    color: var(--royal-blue);
-    background: var(--blanco);
+    color: var(--blanco);                      /* Texto blanco */
+    background: #d32f2f;                       /* Rojo para destacar */
 }
 
+/* Línea debajo del botón activo */
 .nav-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
+    content: '';                               /* Pseudo-elemento vacío */
+    position: absolute;                        /* Posicionamiento absoluto */
+    bottom: -10px;                             /* 10px debajo del botón */
     left: 0;
     right: 0;
-    height: 3px;
-    background: var(--royal-blue);
+    height: 3px;                               /* Grosor de la línea */
+    background: #d32f2f;                       /* Color rojo */
 }
 
 /* ========================================
-   MENÚ
+   ELEMENTOS DEL MENÚ DE COMIDA
+   ========================================
+   Estructura para mostrar items del menú
    ======================================== */
+
+/* Item individual del menú */
 .menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--gris-medio);
+    display: flex;                             /* Layout horizontal */
+    justify-content: space-between;            /* Separa descripción y precio */
+    align-items: center;                       /* Alinea verticalmente */
+    padding: var(--spacing-sm) 0;              /* Espaciado vertical */
+    border-bottom: 1px solid var(--gris-medio); /* Línea separadora */
 }
 
+/* Detalle de item del menú */
 .menu-item-detail {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-    width: 100%;
+    width: 100%;                               /* Ocupa todo el ancho */
 }
 
+/* Descripción del platillo */
 .menu-description {
-    flex: 1;
-    margin-right: var(--spacing-md);
+    flex: 1;                                   /* Ocupa espacio disponible */
+    margin-right: var(--spacing-md);           /* Espacio antes del precio */
 }
 
+/* Precio del platillo */
 .menu-price {
-    font-weight: bold;
-    color: var(--rojo-bandera);
-    font-size: 1.2em;
-    white-space: nowrap;
+    font-weight: bold;                         /* Negrita */
+    color: var(--rojo-bandera);                /* Rojo para destacar */
+    font-size: 1.2em;                          /* Más grande */
+    white-space: nowrap;                       /* No permite salto de línea */
 }
 
+/* Extras del menú */
 .menu-extra {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-end;                     /* Alinea al fondo */
     padding: var(--spacing-sm) 0;
     border-bottom: 1px solid var(--gris-medio);
 }
 
 /* ========================================
-   ESPECIALIDADES
+   ESPECIALIDADES (CARDS DESTACADOS)
+   ========================================
+   Tarjetas para mostrar platillos especiales
    ======================================== */
+
+/* Grid de especialidades */
 .especialidades-grid {
-    display: flex;
-    gap: 30px;
+    display: flex;                             /* Layout flexible */
+    gap: 30px;                                 /* Espacio entre cards */
     margin-top: var(--spacing-sm);
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-around;             /* Distribuye uniformemente */
+    flex-wrap: wrap;                           /* Permite múltiples líneas */
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Card individual de especialidad */
 .especialidad-card {
-    background: var(--royal-blue);
-    color: var(--blanco);
+    background: var(--royal-blue);             /* Fondo azul */
+    color: var(--blanco);                      /* Texto blanco */
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 320px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    border-radius: 10px;                       /* Bordes bien redondeados */
+    text-align: center;                        /* Texto centrado */
+    width: 320px;                              /* Ancho fijo */
+    flex-shrink: 0;                            /* No se encoge */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.3s ease;           /* Transición suave */
 }
 
+/* Efecto hover en card */
 .especialidad-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);               /* Se eleva 5px */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
+/* Imagen en card de especialidad */
 .especialidad-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+    width: 100%;                               /* Ancho completo */
+    height: 220px;                             /* Altura fija */
+    object-fit: cover;                         /* Recorta para ajustar */
     display: block;
-    margin: 0 auto 15px auto;
-    border-radius: 8px;
+    margin: 0 auto 15px auto;                  /* Centrado con margen inferior */
+    border-radius: 8px;                        /* Bordes redondeados */
 }
 
+/* Título en card */
 .especialidad-card h3 {
-    color: var(--blanco);
+    color: var(--blanco);                      /* Texto blanco */
     font-size: 1.3em;
     margin-bottom: 10px;
 }
 
+/* Párrafo en card */
 .especialidad-card p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);          /* Blanco casi opaco */
     font-size: 1em;
 }
 
 /* ========================================
-   BLOG
+   SECCIÓN DE BLOG
+   ========================================
+   Elementos para artículos y posts
    ======================================== */
+
+/* Grid de artículos del blog */
 .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    display: grid;                                        /* Sistema de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+    gap: 15px;                                            /* Espacio entre cards */
     margin: 15px 0;
 }
 
+/* Card de artículo del blog */
 .blog-card {
     background: var(--blanco);
     border: 2px solid var(--gris-medio);
     border-radius: 5px;
     padding: 15px;
-    transition: transform 0.2s;
+    transition: transform 0.2s;                           /* Transición rápida */
 }
 
+/* Efecto hover en blog card */
 .blog-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);                          /* Se eleva 3px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);          /* Agrega sombra */
 }
 
+/* Imagen placeholder del blog */
 .blog-image {
-    background: var(--rojo-bandera);
+    background: var(--rojo-bandera);                      /* Fondo rojo */
     height: 120px;
     border-radius: 5px;
     margin-bottom: var(--spacing-sm);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;                                  /* Centra verticalmente */
+    justify-content: center;                              /* Centra horizontalmente */
     color: var(--blanco);
 }
 
+/* Sidebar del blog */
 .sidebar {
     background: var(--gris-medio);
     padding: 15px;
@@ -438,97 +528,119 @@ WIREFRAMES
     margin-top: 15px;
 }
 
-/* Categorías del blog */
+/* ========================================
+   CATEGORÍAS DEL BLOG
+   ========================================
+   Botones para filtrar contenido
+   ======================================== */
+
+/* Contenedor de categorías */
 .categorias {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
+    display: flex;                                        /* Layout horizontal */
+    gap: var(--spacing-sm);                              /* Espacio entre botones */
+    flex-wrap: wrap;                                     /* Permite salto de línea */
     margin-top: var(--spacing-sm);
 }
 
+/* Botón de categoría individual */
 .categoria {
-    background: var(--rojo-bandera);
-    color: var(--blanco);
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    background: var(--rojo-bandera);                      /* Fondo rojo */
+    color: var(--blanco);                                 /* Texto blanco */
+    padding: 6px 18px;                                    /* Espaciado interno */
+    border-radius: 20px;                                  /* Muy redondeado (píldora) */
+    font-size: 0.9em;                                     /* Texto más pequeño */
+    font-weight: bold;                                    /* Negrita */
+    transition: all 0.3s ease;                            /* Transición suave */
+    cursor: pointer;                                      /* Cursor de mano */
 }
 
+/* Efecto hover en categoría */
 .categoria:hover {
-    background: var(--azul-bandera);
-    transform: scale(1.05);
+    background: var(--azul-bandera);                      /* Cambia a azul */
+    transform: scale(1.05);                               /* Aumenta 5% el tamaño */
 }
 
 /* ========================================
-   OPINIONES
+   BARRA DE OPINIONES
+   ========================================
+   Carrusel horizontal de testimonios
    ======================================== */
+
+/* Contenedor de opiniones */
 .opiniones-barra {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: var(--spacing-md);
+    display: flex;                                        /* Layout horizontal */
+    justify-content: center;                              /* Centra contenido */
+    align-items: stretch;                                 /* Estira items a la misma altura */
+    gap: var(--spacing-md);                              /* Espacio entre cards */
     padding: var(--spacing-md);
     background-color: var(--gris-claro);
-    border-top: 2px solid var(--gris-medio);
-    border-bottom: 2px solid var(--gris-medio);
-    overflow-x: auto;
+    border-top: 2px solid var(--gris-medio);             /* Borde superior */
+    border-bottom: 2px solid var(--gris-medio);          /* Borde inferior */
+    overflow-x: auto;                                     /* Scroll horizontal si es necesario */
 }
 
+/* Card individual de opinión */
 .opinion-card {
     background: var(--blanco);
     border-radius: var(--border-radius-lg);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    width: 250px;
-    flex-shrink: 0;
+    width: 250px;                                         /* Ancho fijo */
+    flex-shrink: 0;                                       /* No se encoge */
     text-align: center;
     transition: transform 0.2s;
 }
 
+/* Efecto hover en opinion card */
 .opinion-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);                          /* Se eleva */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);          /* Sombra más pronunciada */
 }
 
+/* Título de la opinión */
 .opinion-card h4 {
     color: var(--royal-blue);
     font-size: 1em;
     margin-bottom: 8px;
 }
 
+/* Texto de la opinión */
 .opinion-card p {
     font-size: 0.9em;
     color: var(--gris-oscuro);
     margin-bottom: var(--spacing-sm);
 }
 
+/* Autor de la opinión */
 .opinion-card .autor {
-    font-size: 0.8em;
-    color: #777;
+    font-size: 0.8em;                                     /* Texto más pequeño */
+    color: #777;                                          /* Gris medio */
     display: block;
 }
 
 /* ========================================
-   COMENTARIOS
+   SECCIÓN DE COMENTARIOS
+   ========================================
+   Área para comentarios de usuarios
    ======================================== */
+
+/* Contenedor de comentarios */
 .comment-section {
     background: var(--gris-claro);
     padding: 15px;
     border-radius: 5px;
     margin-top: 15px;
-    
 }
 
+/* Comentario individual */
 .comment {
     background: var(--blanco);
     padding: 15px;
-    border-left: 3px solid var(--rojo-bandera);
+    border-left: 3px solid var(--rojo-bandera);          /* Barra roja izquierda */
     margin-bottom: var(--spacing-sm);
 }
 
+/* Caja de formulario */
 .form-box {
     background: var(--blanco);
     padding: 15px;
@@ -537,53 +649,81 @@ WIREFRAMES
 }
 
 /* ========================================
-   TABLAS
+   TABLAS DE DATOS
+   ========================================
+   Estilo para tablas HTML
    ======================================== */
+
+/* Tabla completa */
 table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%;                                          /* Ocupa todo el ancho */
+    border-collapse: collapse;                            /* Une los bordes */
     margin: var(--spacing-md) 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Celdas de tabla (encabezado y datos) */
 th,
 td {
-    padding: 15px;
-    text-align: left;
-    border: 1px solid #ddd;
+    padding: 15px;                                        /* Espaciado interno */
+    text-align: left;                                     /* Alineación izquierda */
+    border: 1px solid #ddd;                              /* Borde gris claro */
 }
 
+/* Encabezados de tabla */
 th {
-    background: var(--royal-blue);
-    color: var(--blanco);
-    font-weight: bold;
+    background: var(--royal-blue);                        /* Fondo azul */
+    color: var(--blanco);                                 /* Texto blanco */
+    font-weight: bold;                                    /* Negrita */
 }
 
+/* Filas pares (efecto zebra) */
 tr:nth-child(even) {
-    background: var(--gris-claro);
+    background: var(--gris-claro);                        /* Fondo gris claro */
 }
 
+/* Efecto hover en filas */
 tr:hover {
-    background: var(--gris-medio);
-    transition: background 0.2s;
+    background: var(--gris-medio);                        /* Fondo gris medio */
+    transition: background 0.2s;                          /* Transición suave */
 }
 
 /* ========================================
-   RESPONSIVE DESIGN
+   DISEÑO RESPONSIVE
+   ========================================
+   Media queries para adaptar el diseño a móviles
+   Se activa cuando el ancho de pantalla es 768px o menos
    ======================================== */
 @media (max-width: 768px) {
+    /* Header en móvil - cambia a columna vertical */
+    header {
+        flex-direction: column;                           /* Apila verticalmente */
+        gap: 15px;
+        padding: 20px;
+    }
+
+    /* Reduce tamaño de títulos en móvil */
     h1 {
-        font-size: 2em;
+        font-size: 2em;                                   /* Más pequeño */
     }
     
     h2 {
-        font-size: 1.5em;
+        font-size: 1.5em;                                 /* Más pequeño */
     }
     
+    /* Especialidades en columna en móvil */
     .especialidades-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;                           /* Una columna */
+        align-items: center;                              /* Centra los items */
+    }
+
+    /* Cards de especialidad en móvil */
+    .especialidad-card {
+        width: 100%;                                      /* Ancho completo */
+        max-width: 350px;                                 /* Pero no más de 350px */
     }
     
+    /* Categorías en columna en móvil */
     .categorias {
         flex-direction: column;
         align-items: flex-start;
@@ -591,20 +731,122 @@ tr:hover {
     }
     
     .categoria {
-        width: fit-content;
+        width: fit-content;                               /* Ancho según contenido */
     }
     
+    /* Navegación en columna en móvil */
     .nav-buttons {
-        flex-direction: column;
+        flex-direction: column;                           /* Apila verticalmente */
+        width: 100%;                                      /* Ancho completo */
+    }
+
+    /* Barra de navegación wireframe en móvil */
+    .wireframe-nav {
+        flex-direction: column;                           /* Columna vertical */
+        padding: 15px;
+    }
+
+    /* Botones de navegación en móvil */
+    .nav-btn {
+        width: 100%;                                      /* Ancho completo */
+        text-align: center;                               /* Texto centrado */
+        margin: 5px 0;                                    /* Margen vertical */
     }
     
+    /* Opiniones en columna en móvil */
     .opiniones-barra {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column;                           /* Columna vertical */
+        align-items: center;                              /* Centra los items */
     }
     
+    /* Cards de opinión en móvil */
     .opinion-card {
-        width: 100%;
-        max-width: 350px;
+        width: 100%;                                      /* Ancho completo */
+        max-width: 350px;                                 /* Pero no más de 350px */
+    }
+
+    /* Footer en una columna en móvil */
+    .wireframe-footer > div {
+        grid-template-columns: 1fr !important;            /* Una sola columna */
+        gap: 20px;
+        text-align: center !important;                    /* Todo centrado */
     }
 }
+
+/* ========================================
+   FIN DEL ARCHIVO CSS
+   ========================================
+   
+   RESUMEN DE TÉCNICAS UTILIZADAS:
+   
+   1. VARIABLES CSS (Custom Properties):
+      - Facilitan el mantenimiento del código
+      - Permiten cambios globales rápidos
+      - Mejor organización y legibilidad
+   
+   2. FLEXBOX:
+      - Sistema de layout moderno y flexible
+      - Ideal para alinear elementos horizontal y verticalmente
+      - Usado en header, navegación, cards, etc.
+   
+   3. GRID CSS:
+      - Para layouts de múltiples columnas
+      - Usado en blog y paleta de colores
+      - Responsive con auto-fit y minmax
+   
+   4. BOX MODEL:
+      - Control total sobre padding, margin y border
+      - box-sizing: border-box para cálculos predecibles
+   
+   5. TRANSICIONES Y ANIMACIONES:
+      - transition para efectos suaves
+      - transform para movimientos (translateY, scale)
+      - Mejora la experiencia de usuario
+   
+   6. PSEUDO-ELEMENTOS:
+      - ::after para crear la línea bajo botón activo
+      - Permite agregar elementos decorativos sin HTML
+   
+   7. PSEUDO-CLASES:
+      - :hover para efectos interactivos
+      - :nth-child para patrón zebra en tablas
+   
+   8. MEDIA QUERIES:
+      - Diseño responsive para diferentes tamaños de pantalla
+      - Mobile-first approach
+   
+   9. SELECTORES AVANZADOS:
+      - Selectores de hijo directo (>)
+      - Selectores de clase múltiple
+   
+   10. SHADOWS Y EFECTOS:
+       - box-shadow para profundidad
+       - text-shadow para destacar texto
+       - Mejora la jerarquía visual
+   
+   BUENAS PRÁCTICAS APLICADAS:
+   
+   - Código comentado y organizado por secciones
+   - Nombres de clases descriptivos (BEM-like)
+   - Valores reutilizables con variables
+   - Sistema de espaciado consistente
+   - Paleta de colores definida
+   - Diseño mobile-first
+   - Accesibilidad con contrastes adecuados
+   - Performance optimizado (transiciones GPU-accelerated)
+   
+   ========================================
+   TECNOLOGÍAS CSS3 MODERNAS:
+   
+   - Custom Properties (Variables CSS)
+   - Flexbox Layout
+   - Grid Layout
+   - Transitions & Transforms
+   - Media Queries
+   - Gradients (linear-gradient)
+   - Box Shadow
+   - Border Radius
+   - RGBA Colors
+   - calc() function (implícito en box-sizing)
+   
+   ======================================== */

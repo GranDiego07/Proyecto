@@ -8,16 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Soda SaborTico</h1>
-    </header>
-    <!-- NAVEGACIÓN -->
-    <div class="wireframe-nav">
+        <h1> Soda SaborTico </h1>
+        <!-- NAVEGACIÓN -->
+        <div class="wireframe-nav" color="royalblue">
         <a href="../index.html" class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</a>
         <a href="menu.html" button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
         <a href="blog.html" button class="nav-btn" onclick="cambiarPagina('blog') ">Blog</a>
         <a href="preguntasfrecuentes.html"button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</a>
         <a href="acercade.html"button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
-    </div>
+        </div>   
+    </header>
+    
     <section>
         <h2>📝 BLOG</h2>
         <div class="content-box">
@@ -72,28 +73,6 @@
         </div>
         <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
     </div>
-    <script>
-    function cambiarPagina(nombrePagina) {
-    // Ocultar todas las páginas
-    const paginas = document.querySelectorAll('.page');
-    paginas.forEach(pagina => {
-        pagina.classList.remove('active');
-        });
-    // Remover clase active de todos los botones
-    const botones = document.querySelectorAll('.nav-btn');
-    botones.forEach(boton => {
-    boton.classList.remove('active');
-    });
-    // Mostrar la página seleccionada
-    const paginaSeleccionada = document.getElementById(nombrePagina);
-    if (paginaSeleccionada) {
-    paginaSeleccionada.classList.add('active');
-    }
-    // Marcar el botón como activo
-    event.target.classList.add('active');
-    // Scroll suave al inicio
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    </script>
+<script src="../js/script.js"></script>
 </body>
 </html>

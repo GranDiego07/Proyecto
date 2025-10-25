@@ -6,12 +6,11 @@
     <title>Soda Sabortico</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+<body>
+
 <div>
     <header>
-        <h1>Proyecto Soda Sabortico</h1>
-        <p class="subtitle">ISW-512 Diseño de Aplicaciones Web</p>
-        <p class="subtitle"><strong>Diego Alberto Granados Hernandez</strong></p>
-    </header>
+        <h1>Soda Sabortico</h1>
         <div class="wireframe-nav">
             <a href="index.html" class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</a>
             <a href="html/menu.html"button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
@@ -19,6 +18,8 @@
             <a href="html/preguntasfrecuentes.html"button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</a>
             <a href="html/acercade.html" button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
         </div>           
+    </header>
+        
     <div class="wireframe">
     <!-- Nuestra especialidad-->
     <h3 style="color: royalblue;">NUESTRAS ESPECIALIDADES</h3>
@@ -69,28 +70,6 @@
                 </div>
                 <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
             </div>
-<script>
-    function cambiarPagina(nombrePagina) {
-    // Ocultar todas las páginas
-    const paginas = document.querySelectorAll('.page');
-    paginas.forEach(pagina => {
-        pagina.classList.remove('active');
-        });
-    // Remover clase active de todos los botones
-    const botones = document.querySelectorAll('.nav-btn');
-    botones.forEach(boton => {
-    boton.classList.remove('active');
-    });
-    // Mostrar la página seleccionada
-    const paginaSeleccionada = document.getElementById(nombrePagina);
-    if (paginaSeleccionada) {
-    paginaSeleccionada.classList.add('active');
-    }
-    // Marcar el botón como activo
-    event.target.classList.add('active');
-    // Scroll suave al inicio
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    </script>
+<script src="../js/script.js"></script>
 </body>
 </html>
