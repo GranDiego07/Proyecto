@@ -771,58 +771,216 @@ tr:hover {
         gap: 20px;
         text-align: center !important;                    /* Todo centrado */
     }
+       /* ========================================
+   GRID DE ARTÍCULOS DEL BLOG
+   ========================================
+   Sistema de cuadrícula responsive para mostrar
+   las tarjetas de artículos del blog
+   ======================================== */
+.articulos-grid {
+    display: grid;                                        /* Activa el sistema de cuadrícula CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    /* auto-fit: crea columnas automáticamente según el espacio disponible
+       minmax(280px, 1fr): cada columna mínimo 280px, máximo 1 fracción del espacio
+       Resultado: diseño responsive que se adapta al tamaño de pantalla */
+    gap: 25px;                                           /* Espacio entre las tarjetas de artículos */
+    margin-top: 30px;                                    /* Separación superior del grid */
 }
 
 /* ========================================
-   FIN DEL ARCHIVO CSS
+   TARJETA INDIVIDUAL DE ARTÍCULO
    ========================================
+   Contenedor de cada artículo del blog
+   ======================================== */
+.articulo-card {
+    background: white;                                    /* Fondo blanco limpio */
+    border-radius: 10px;                                  /* Esquinas redondeadas */
+    overflow: hidden;                                     /* Oculta contenido que sobresale (importante para imagen) */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);               /* Sombra sutil para profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    /* Transición suave para transform y box-shadow
+       0.3s: duración de 300 milisegundos
+       ease: curva de aceleración suave */
+    cursor: pointer;                                      /* Cambia el cursor a manita (indica que es clickeable) */
+}
+
+/* Efecto hover (al pasar el mouse) sobre la tarjeta */
+.articulo-card:hover {
+    transform: translateY(-5px);                          /* Mueve la tarjeta 5px hacia arriba */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);              /* Sombra más grande y oscura (más profundidad) */
+}
+
+/* ========================================
+   IMAGEN DEL ARTÍCULO
+   ========================================
+   Imagen principal que aparece en la tarjeta
+   ======================================== */
+.articulo-imagen {
+    width: 100%;                                          /* Ocupa todo el ancho de la tarjeta */
+    height: 200px;                                        /* Altura fija de 200 píxeles */
+    object-fit: cover;                                    /* Recorta y ajusta la imagen sin deformarla */
+    /* object-fit: cover mantiene la proporción de la imagen
+       y la recorta para llenar todo el espacio disponible */
+}
+
+/* ========================================
+   CONTENIDO DE LA TARJETA
+   ========================================
+   Área que contiene título, descripción, etc.
+   ======================================== */
+.articulo-contenido {
+    padding: 20px;                                        /* Espaciado interno en todos los lados */
+}
+
+/* ========================================
+   ETIQUETA DE CATEGORÍA
+   ========================================
+   Badge pequeño que indica el tipo de contenido
+   ======================================== */
+.articulo-categoria {
+    display: inline-block;                                /* Se comporta como bloque pero en línea */
+    background: #CE1126;                                  /* Fondo rojo bandera costarricense */
+    color: white;                                         /* Texto blanco para buen contraste */
+    padding: 4px 12px;                                    /* Espaciado interno (vertical horizontal) */
+    border-radius: 15px;                                  /* Muy redondeado (forma de píldora) */
+    font-size: 0.85em;                                    /* 85% del tamaño de fuente base */
+    font-weight: bold;                                    /* Texto en negrita */
+    margin-bottom: 10px;                                  /* Separación inferior */
+}
+
+/* ========================================
+   TÍTULO DEL ARTÍCULO
+   ========================================
+   Encabezado principal de cada tarjeta
+   ======================================== */
+.articulo-titulo {
+    color: #002B7F;                                       /* Azul bandera costarricense */
+    font-size: 1.3em;                                     /* 130% del tamaño base (más grande) */
+    margin: 10px 0;                                       /* Márgenes verticales de 10px */
+    font-weight: bold;                                    /* Texto en negrita para destacar */
+}
+
+/* ========================================
+   RESUMEN DEL ARTÍCULO
+   ========================================
+   Descripción breve del contenido
+   ======================================== */
+.articulo-resumen {
+    color: #666;                                          /* Gris medio para texto secundario */
+    font-size: 0.95em;                                    /* Ligeramente más pequeño que el texto base */
+    line-height: 1.6;                                     /* Altura de línea para mejor legibilidad */
+    margin: 10px 0;                                       /* Márgenes verticales */
+}
+
+/* ========================================
+   FECHA DE PUBLICACIÓN
+   ========================================
+   Metadata del artículo
+   ======================================== */
+.articulo-fecha {
+    color: #999;                                          /* Gris claro para información secundaria */
+    font-size: 0.85em;                                    /* Texto más pequeño */
+    margin-top: 10px;                                     /* Separación superior */
+}
+
+/* ========================================
+   ENLACE "LEER MÁS"
+   ========================================
+   Botón/link para ir al artículo completo
+   ======================================== */
+.articulo-link {
+    display: inline-block;                                /* Se comporta como bloque pero en línea */
+    color: #0056b3;                                       /* Azul de navegación */
+    font-weight: 600;                                     /* Semi-negrita */
+    margin-top: 10px;                                     /* Separación superior */
+    text-decoration: none;                                /* Sin subrayado */
+    transition: color 0.3s ease;                          /* Transición suave del color */
+}
+
+/* Efecto hover sobre el enlace */
+.articulo-link:hover {
+    color: #003d82;                                       /* Azul más oscuro al pasar el mouse */
+}
+
+/* ========================================
+   CONTROL DE VISIBILIDAD DE SECCIONES
+   ========================================
+   Clases para mostrar/ocultar contenido
+   mediante JavaScript
+   ======================================== */
+
+/* Oculta completamente un elemento */
+.seccion-oculta {
+    display: none;                                        /* El elemento no se muestra ni ocupa espacio */
+}
+
+/* Muestra un elemento como bloque */
+.seccion-visible {
+    display: block;                                       /* El elemento se muestra normalmente */
+}
+
+/* ========================================
+   CATEGORÍA ACTIVA
+   ========================================
+   Estilo para la categoría seleccionada
+   ======================================== */
+.categoria.activa {
+    background: #002B7F;                                  /* Azul bandera para destacar */
+    transform: scale(1.1);                                /* Aumenta el tamaño 10% */
+    /* transform: scale agranda el elemento desde su centro
+       1.1 = 110% del tamaño original */
+}
+
+
+}
+
+/* ========================================
+   RESUMEN DE TÉCNICAS CSS UTILIZADAS:
    
-   RESUMEN DE TÉCNICAS UTILIZADAS:
-   
-   1. VARIABLES CSS (Custom Properties):
-      - Facilitan el mantenimiento del código
-      - Permiten cambios globales rápidos
-      - Mejor organización y legibilidad
-   
-   2. FLEXBOX:
+   1. CSS GRID:
       - Sistema de layout moderno y flexible
-      - Ideal para alinear elementos horizontal y verticalmente
-      - Usado en header, navegación, cards, etc.
+      - auto-fit: adapta automáticamente las columnas
+      - minmax(): define tamaños mínimo y máximo
+      - Responsive sin media queries
    
-   3. GRID CSS:
-      - Para layouts de múltiples columnas
-      - Usado en blog y paleta de colores
-      - Responsive con auto-fit y minmax
+   2. FLEXBOX (implícito en inline-block):
+      - Para alinear elementos dentro de las tarjetas
    
-   4. BOX MODEL:
-      - Control total sobre padding, margin y border
-      - box-sizing: border-box para cálculos predecibles
+   3. TRANSITIONS:
+      - Anima cambios de propiedades suavemente
+      - Mejora la experiencia de usuario
+      - Se aplica en hover effects
    
-   5. TRANSICIONES Y ANIMACIONES:
-      - transition para efectos suaves
-      - transform para movimientos (translateY, scale)
+   4. TRANSFORMS:
+      - translateY(): mueve elementos verticalmente
+      - scale(): cambia el tamaño de elementos
+      - No afecta el flujo del documento
+   
+   5. OBJECT-FIT:
+      - Controla cómo las imágenes se ajustan a su contenedor
+      - cover: recorta manteniendo proporciones
+   
+   6. BOX-SHADOW:
+      - Crea efectos de profundidad
+      - Formato: x-offset y-offset blur spread color
+   
+   7. OVERFLOW:
+      - hidden: oculta contenido que sobresale
+      - Importante para border-radius en contenedores con imágenes
+   
+   8. PSEUDO-CLASES:
+      - :hover para efectos interactivos
+      - Mejora la usabilidad
+   
+   9. CURSOR:
+      - pointer: indica elementos interactivos
       - Mejora la experiencia de usuario
    
-   6. PSEUDO-ELEMENTOS:
-      - ::after para crear la línea bajo botón activo
-      - Permite agregar elementos decorativos sin HTML
-   
-   7. PSEUDO-CLASES:
-      - :hover para efectos interactivos
-      - :nth-child para patrón zebra en tablas
-   
-   8. MEDIA QUERIES:
-      - Diseño responsive para diferentes tamaños de pantalla
-      - Mobile-first approach
-   
-   9. SELECTORES AVANZADOS:
-      - Selectores de hijo directo (>)
-      - Selectores de clase múltiple
-   
-   10. SHADOWS Y EFECTOS:
-       - box-shadow para profundidad
-       - text-shadow para destacar texto
-       - Mejora la jerarquía visual
+   10. DISPLAY:
+       - none: oculta completamente
+       - block: muestra como bloque
+       - inline-block: híbrido de inline y block
+       - grid: sistema de cuadrícula
    
    BUENAS PRÁCTICAS APLICADAS:
    

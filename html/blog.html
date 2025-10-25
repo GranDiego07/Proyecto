@@ -20,32 +20,99 @@
     </header>
     
     <section>
-        <h2>📝 BLOG</h2>
+        <h2>📝 BLOG SODA SABORTICO</h2>
+        
         <div class="content-box">
             <h4 style="color: royalblue;">CATEGORÍAS</h4>
             <div class="categorias">
-                <span class="categoria">Todas</span>
-                <span class="categoria">Opiniones</span>
-                <span class="categoria">Recetas</span>
-                <span class="categoria">Historia</span>
+                <span class="categoria activa" onclick="filtrarCategoria('todas')">Todas</span>
+                <span class="categoria" onclick="filtrarCategoria('articulos')">Artículos</span>
+                <span class="categoria" onclick="filtrarCategoria('opiniciones')">Opiniciones</span>
+                <span class="categoria" onclick="filtrarCategoria('historia')">Historia</span>
             </div>
         </div>
 
-        <div class="opiniones-barra">
-            <div class="opinion-card">
-                <h4>Cómo hacer el gallo pinto perfecto</h4>
-                <p>“Aprendí a preparar el desayuno tico, ¡quedó delicioso!”</p>
-                <span class="autor">– Recetas | 15 Sep 2025</span>
+        <!-- SECCIÓN DE ARTÍCULOS -->
+        <div id="seccion-articulos" class="seccion-visible">
+            <h3 style="margin-top: 30px;">Artículos Destacados</h3>
+            <div class="articulos-grid">
+                <!-- Artículo 1 -->
+                <div class="articulo-card" onclick="window.location.href='articulo1.html'">
+                    <img src="../imagenes/Gallo-pinto-de-Costa-Rica-shutterstock_1148861354.webp" alt="Gallo Pinto" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
+                    <div class="articulo-contenido">
+                        <span class="articulo-categoria">ARTÍCULO</span>
+                        <h3 class="articulo-titulo">Los Secretos del Gallo Pinto Perfecto</h3>
+                        <p class="articulo-resumen">
+                            Descubre las técnicas tradicionales y consejos de expertos para preparar el desayuno más emblemático de Costa Rica.
+                        </p>
+                        <p class="articulo-fecha">📅 15 de Octubre, 2025</p>
+                        <a href="articulos/gallopinto.html" class="articulo-link">Leer más →</a>
+                    </div>
+                </div>
+
+                <!-- Artículo 2 -->
+                <div class="articulo-card" onclick="window.location.href='articulo2.html'">
+                    <img src="../imagenes/Receta-de-Casado-platillo-típico-de-Costa-Rica.webp" alt="Casado" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
+                    <div class="articulo-contenido">
+                        <span class="articulo-categoria">ARTÍCULO</span>
+                        <h3 class="articulo-titulo">El Casado Tico: Historia y Tradición</h3>
+                        <p class="articulo-resumen">
+                            Conoce el origen del plato más completo de la cocina costarricense y por qué lleva ese peculiar nombre.
+                        </p>
+                        <p class="articulo-fecha">📅 10 de Octubre, 2025</p>
+                        <a href="articulos/casado.html" class="articulo-link">Leer más →</a>
+                    </div>
+                </div>
+
+                <!-- Artículo 3 -->
+                <div class="articulo-card" onclick="window.location.href='articulo3.html'">
+                    <img src="../imagenes/20220704_153139_0.jpg" alt="Pollo Achiotado" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
+                    <div class="articulo-contenido">
+                        <span class="articulo-categoria">ARTÍCULO</span>
+                        <h3 class="articulo-titulo">El Pollo Achiotado: Nuestra Especialidad</h3>
+                        <p class="articulo-resumen">
+                            El achiote le da ese color dorado y sabor único a nuestro pollo. Te contamos su historia y preparación.
+                        </p>
+                        <p class="articulo-fecha">📅 5 de Octubre, 2025</p>
+                        <a href="articulos/polloahiotado.html" class="articulo-link">Leer más →</a>
+                    </div>
+                </div>
+
+                <!-- Artículo 4 -->
+                <div class="articulo-card" onclick="window.location.href='articulo4.html'">
+                    <img src="../imagenes/tortilla frijol queso.jpg" alt="Tortillas" style="max-width: 250px; height: auto; display: block; margin: 0 auto 20px auto;">
+                    <div class="articulo-contenido">
+                        <span class="articulo-categoria">ARTÍCULO</span>
+                        <h3 class="articulo-titulo">Tortillas Palmeadas: Un Arte Costarricense</h3>
+                        <p class="articulo-resumen">
+                            Las tortillas hechas a mano son parte esencial de nuestra cultura. Aprende sobre esta tradición ancestral.
+                        </p>
+                        <p class="articulo-fecha">📅 1 de Octubre, 2025</p>
+                        <a href="articulos/tortilla.html" class="articulo-link">Leer más →</a>
+                    </div>
+                </div>
             </div>
-            <div class="opinion-card">
-                <h4>Origen del casado costarricense</h4>
-                <p>“Nunca imaginé que este plato tuviera tanta historia.”</p>
-                <span class="autor">– Historia | 12 Sep 2025</span>
-            </div>
-            <div class="opinion-card">
-                <h4>Mi plato favorito</h4>
-                <p>“El casado siempre será mi comida preferida.”</p>
-                <span class="autor">– Opiniones | 10 Sep 2025</span>
+        </div>
+
+        <!-- SECCIÓN DE OPINIONES (Recetas y Historia) -->
+        <div id="seccion-opiniones" class="seccion-oculta">
+            <h3 style="margin-top: 30px;">Recetas e Historia</h3>
+            <div class="opiniones-barra">
+                <div class="opinion-card">
+                    <h4>Cómo hacer el gallo pinto perfecto</h4>
+                    <p>"Aprendí a preparar el desayuno tico, ¡quedó delicioso!"</p>
+                    <span class="autor">– Recetas | 15 Sep 2025</span>
+                </div>
+                <div class="opinion-card">
+                    <h4>Origen del casado costarricense</h4>
+                    <p>"Nunca imaginé que este plato tuviera tanta historia."</p>
+                    <span class="autor">– Historia | 12 Sep 2025</span>
+                </div>
+                <div class="opinion-card">
+                    <h4>Mi plato favorito</h4>
+                    <p>"El casado siempre será mi comida preferida."</p>
+                    <span class="autor">– Opiniones | 10 Sep 2025</span>
+                </div>
             </div>
         </div>
     </section>
@@ -73,6 +140,72 @@
         </div>
         <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
     </div>
-<script src="../js/script.js"></script>
+    <script>
+        function cambiarPagina(nombrePagina) {
+    // Ocultar todas las páginas
+    const paginas = document.querySelectorAll('.page');
+    paginas.forEach(pagina => {
+        pagina.classList.remove('active');
+        });
+    // Remover clase active de todos los botones
+    const botones = document.querySelectorAll('.nav-btn');
+    botones.forEach(boton => {
+    boton.classList.remove('active');
+    });
+    // Mostrar la página seleccionada
+    const paginaSeleccionada = document.getElementById(nombrePagina);
+    if (paginaSeleccionada) {
+    paginaSeleccionada.classList.add('active');
+    }
+    // Marcar el botón como activo
+    event.target.classList.add('active');
+    // Scroll suave al inicio
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Función para filtrar por categorías
+    function filtrarCategoria(categoria) {
+        // Remover clase activa de todas las categorías
+        const categorias = document.querySelectorAll('.categoria');
+        categorias.forEach(cat => cat.classList.remove('activa'));
+    // Agregar clase activa a la categoría seleccionada
+    event.target.classList.add('activa');
+    const seccionArticulos = document.getElementById('seccion-articulos');
+    const seccionOpiniones = document.getElementById('seccion-opiniones');
+        if (categoria === 'todas' || categoria === 'articulos') {
+            seccionArticulos.classList.remove('seccion-oculta');
+            seccionArticulos.classList.add('seccion-visible');
+            seccionOpiniones.classList.remove('seccion-visible');
+            seccionOpiniones.classList.add('seccion-oculta');
+        } else {
+                seccionArticulos.classList.remove('seccion-visible');
+                seccionArticulos.classList.add('seccion-oculta');
+                seccionOpiniones.classList.remove('seccion-oculta');
+                seccionOpiniones.classList.add('seccion-visible');
+            }
+        }
+
+        // Navegación de páginas
+        function cambiarPagina(nombrePagina) {
+        const paginas = document.querySelectorAll('.page');
+        paginas.forEach(pagina => {
+        pagina.classList.remove('active');
+        });
+            
+        const botones = document.querySelectorAll('.nav-btn');
+        botones.forEach(boton => {
+            boton.classList.remove('active');
+        });
+            
+        const paginaSeleccionada = document.getElementById(nombrePagina);
+        if (paginaSeleccionada) {
+            paginaSeleccionada.classList.add('active');
+        }
+            
+        event.target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+    </script>
+
 </body>
 </html>
