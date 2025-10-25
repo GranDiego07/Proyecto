@@ -1,11 +1,5 @@
-/* ========================================
-   RESET Y CONFIGURACIÓN GLOBAL
-   ========================================
-   Elimina márgenes y padding por defecto de todos los elementos
-   para tener control total sobre el espaciado.
-   box-sizing: border-box hace que el padding y border se incluyan
-   en el ancho total del elemento.
-   ======================================== */
+/* Elimina márgenes y padding por defecto de todos los elementos para tener control total sobre el espaciado.
+box-sizing: border-box hace que el padding y border se incluyan en el ancho total del elemento. */
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +7,8 @@
     font-family: Arial, sans-serif;
 }
 
-/* ========================================
-   VARIABLES CSS (CUSTOM PROPERTIES)
-   ========================================
-   Define colores y valores reutilizables en todo el sitio.
-   Ventajas: fácil mantenimiento, cambios globales desde un solo lugar,
-   y mejor organización del código.
-   Se acceden usando var(--nombre-variable)
-   ======================================== */
+/* Define colores y valores reutilizables en todo el sitio.
+Se acceden usando var(--nombre-variable) */
 :root {
     /* Colores de la bandera de Costa Rica - Representan la identidad nacional */
     --azul-bandera: #002B7F;      /* Azul oscuro de la bandera */
@@ -48,11 +36,7 @@
     --border-radius-lg: 10px;     /* Radio grande para elementos destacados */
 }
 
-/* ========================================
-   ESTILOS DEL BODY
-   ========================================
-   Configuración base para toda la página
-   ======================================== */
+/* Configuración base para toda la página */
 body {
     line-height: 1.6;                    /* Altura de línea para mejor legibilidad */
     color: var(--gris-oscuro);           /* Color de texto por defecto */
@@ -60,26 +44,18 @@ body {
     font-size: 16px;                     /* Tamaño de fuente base */
 }
 
-/* ========================================
-   CONTENEDOR PRINCIPAL
-   ========================================
-   Limita el ancho del contenido y lo centra
-   ======================================== */
+/* Limita el ancho del contenido y lo centra */
 .container {
     max-width: 1200px;                   /* Ancho máximo para no extenderse demasiado */
     margin: 0 auto;                      /* Centra horizontalmente */
     padding: var(--spacing-md);          /* Espaciado interno */
-    background: var(--fondo-crema);      /* Mantiene el fondo crema */
+    background: var(--fondo-crema);
 }
 
-/* ========================================
-   HEADER (ENCABEZADO PRINCIPAL)
-   ========================================
-   Contiene el logo y la navegación principal.
-   Usa flexbox para alinear elementos horizontalmente.
-   ======================================== */
+/* Contiene el logo y la navegación principal.
+   Usa flexbox para alinear elementos horizontalmente. */
 header {
-    background: white;                   /* Fondo blanco limpio */
+    background: white;                   
     padding: 20px 40px;                  /* Espaciado interno (vertical horizontal) */
     border: none;                        /* Sin borde */
     display: flex;                       /* Flexbox para layout horizontal */
@@ -87,12 +63,8 @@ header {
     justify-content: space-between;      /* Distribuye espacio entre logo y navegación */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
     margin-bottom: 30px;                 /* Separación del contenido siguiente */
-    gap: 30px;                          /* Espacio entre elementos flex */
+    gap: 30px;                           /* Espacio entre elementos flex */
 }
-
-/* ========================================
-   TÍTULOS PRINCIPALES
-   ======================================== */
 
 /* H1 - Título principal del sitio (logo/nombre) */
 h1 {
