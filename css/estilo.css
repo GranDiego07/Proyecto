@@ -532,90 +532,259 @@ section {
    CATEGORÍAS DEL BLOG
    ========================================
    Botones para filtrar contenido
+   ACTUALIZADO: Ahora con estilos mejorados
    ======================================== */
 
 /* Contenedor de categorías */
 .categorias {
     display: flex;                                        /* Layout horizontal */
-    gap: var(--spacing-sm);                              /* Espacio entre botones */
+    gap: 15px;                                           /* Espacio entre botones (AUMENTADO de 10px) */
     flex-wrap: wrap;                                     /* Permite salto de línea */
     margin-top: var(--spacing-sm);
 }
 
-/* Botón de categoría individual */
+/* Botón de categoría individual 
+   ACTUALIZADO: Diseño tipo "pill button" moderno */
 .categoria {
-    background: var(--rojo-bandera);                      /* Fondo rojo */
-    color: var(--blanco);                                 /* Texto blanco */
-    padding: 6px 18px;                                    /* Espaciado interno */
-    border-radius: 20px;                                  /* Muy redondeado (píldora) */
-    font-size: 0.9em;                                     /* Texto más pequeño */
-    font-weight: bold;                                    /* Negrita */
-    transition: all 0.3s ease;                            /* Transición suave */
-    cursor: pointer;                                      /* Cursor de mano */
+    background: white;                                    /* Fondo blanco por defecto */
+    color: var(--gris-oscuro);                           /* Texto oscuro */
+    padding: 8px 16px;                                   /* Espaciado interno cómodo */
+    border: 2px solid #ddd;                              /* Borde gris claro */
+    border-radius: 20px;                                 /* Muy redondeado (forma de píldora) */
+    font-size: 0.9em;                                    /* Texto ligeramente más pequeño */
+    font-weight: 600;                                    /* Semi-negrita */
+    transition: all 0.3s ease;                           /* Transición suave de todos los cambios */
+    cursor: pointer;                                     /* Cursor de mano */
 }
 
-/* Efecto hover en categoría */
+/* Efecto hover en categoría 
+   NUEVO: Cambia borde y color al pasar el mouse */
 .categoria:hover {
-    background: var(--azul-bandera);                      /* Cambia a azul */
-    transform: scale(1.05);                               /* Aumenta 5% el tamaño */
+    border-color: royalblue;                             /* Borde azul */
+    color: royalblue;                                    /* Texto azul */
+}
+
+/* Categoría activa (seleccionada)
+   ACTUALIZADO: Diseño más prominente */
+.categoria.activa {
+    background-color: royalblue;                         /* Fondo azul royal */
+    color: white;                                        /* Texto blanco para contraste */
+    border-color: royalblue;                             /* Borde del mismo color */
 }
 
 /* ========================================
-   BARRA DE OPINIONES
+   OPINIONES / RECETAS E HISTORIA
    ========================================
-   Carrusel horizontal de testimonios
+   Sistema de grid para tarjetas de opiniones
+   ACTUALIZADO: Grid de 4 columnas con responsive
    ======================================== */
 
-/* Contenedor de opiniones */
+/* Contenedor principal de opiniones
+   ANTES: Era un flexbox con scroll horizontal
+   AHORA: Grid de 4 columnas que se adapta a pantallas */
 .opiniones-barra {
-    display: flex;                                        /* Layout horizontal */
-    justify-content: center;                              /* Centra contenido */
-    align-items: stretch;                                 /* Estira items a la misma altura */
-    gap: var(--spacing-md);                              /* Espacio entre cards */
-    padding: var(--spacing-md);
-    background-color: var(--gris-claro);
-    border-top: 2px solid var(--gris-medio);             /* Borde superior */
-    border-bottom: 2px solid var(--gris-medio);          /* Borde inferior */
-    overflow-x: auto;                                     /* Scroll horizontal si es necesario */
+    display: grid;                                       /* Cambio de flex a grid */
+    grid-template-columns: repeat(4, 1fr);              /* 4 columnas iguales */
+    /* repeat(4, 1fr) = crea 4 columnas, cada una toma 1 fracción del espacio */
+    gap: 20px;                                          /* Espacio entre tarjetas */
+    margin-bottom: 40px;                                /* Separación inferior */
 }
 
-/* Card individual de opinión */
+/* RESPONSIVE: 3 columnas en pantallas medianas */
+@media (max-width: 1200px) {
+    .opiniones-barra {
+        grid-template-columns: repeat(3, 1fr);          /* Se reduce a 3 columnas */
+    }
+}
+
+/* RESPONSIVE: 2 columnas en tablets */
+@media (max-width: 768px) {
+    .opiniones-barra {
+        grid-template-columns: repeat(2, 1fr);          /* Se reduce a 2 columnas */
+    }
+}
+
+/* RESPONSIVE: 1 columna en móviles */
+@media (max-width: 480px) {
+    .opiniones-barra {
+        grid-template-columns: 1fr;                     /* Una sola columna */
+    }
+}
+
+/* Card individual de opinión 
+   ACTUALIZADO: Diseño más compacto y elegante */
 .opinion-card {
-    background: var(--blanco);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: 250px;                                         /* Ancho fijo */
-    flex-shrink: 0;                                       /* No se encoge */
-    text-align: center;
-    transition: transform 0.2s;
-}
-
-/* Efecto hover en opinion card */
-.opinion-card:hover {
-    transform: translateY(-5px);                          /* Se eleva */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);          /* Sombra más pronunciada */
+    background: #f8f9fa;                                /* Fondo gris muy claro */
+    padding: 20px;                                      /* Espaciado interno */
+    border-radius: 8px;                                 /* Bordes redondeados */
+    border-left: 4px solid royalblue;                   /* Barra azul a la izquierda (acento) */
+    /* Esta barra lateral es un detalle visual que guía la vista */
 }
 
 /* Título de la opinión */
 .opinion-card h4 {
-    color: var(--royal-blue);
-    font-size: 1em;
-    margin-bottom: 8px;
+    color: royalblue;                                   /* Azul para destacar */
+    margin-bottom: 10px;                                /* Espacio debajo del título */
 }
 
 /* Texto de la opinión */
 .opinion-card p {
-    font-size: 0.9em;
-    color: var(--gris-oscuro);
-    margin-bottom: var(--spacing-sm);
+    color: #555;                                        /* Gris medio para texto secundario */
+    margin-bottom: 10px;                                /* Espacio debajo */
 }
 
-/* Autor de la opinión */
-.opinion-card .autor {
-    font-size: 0.8em;                                     /* Texto más pequeño */
-    color: #777;                                          /* Gris medio */
-    display: block;
+/* Autor de la opinión (metadata) */
+.autor {
+    color: #888;                                        /* Gris claro */
+    font-size: 0.9em;                                   /* Texto más pequeño */
+    font-style: italic;                                 /* Cursiva para diferenciarlo */
+}
+
+/* ========================================
+   GRID DE ARTÍCULOS DEL BLOG
+   ========================================
+   Sistema de cuadrícula responsive para mostrar
+   las tarjetas de artículos del blog
+   ======================================== */
+.articulos-grid {
+    display: grid;                                      /* Activa el sistema de cuadrícula CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    /* auto-fit: crea columnas automáticamente según el espacio disponible
+       minmax(280px, 1fr): cada columna mínimo 280px, máximo 1 fracción del espacio
+       Resultado: diseño responsive que se adapta al tamaño de pantalla */
+    gap: 30px;                                          /* Espacio entre las tarjetas (AUMENTADO) */
+    margin-bottom: 40px;                                /* Separación inferior */
+}
+
+/* ========================================
+   TARJETA INDIVIDUAL DE ARTÍCULO
+   ========================================
+   Contenedor de cada artículo del blog
+   ACTUALIZADO: Hover mejorado
+   ======================================== */
+.articulo-card {
+    background: white;                                  /* Fondo blanco limpio */
+    border: 1px solid #ddd;                            /* Borde gris claro */
+    border-radius: 8px;                                /* Esquinas redondeadas */
+    padding: 20px;                                     /* Espaciado interno */
+    cursor: pointer;                                   /* Indica que es clickeable */
+    transition: transform 0.3s, box-shadow 0.3s;       /* Transiciones suaves */
+}
+
+/* Efecto hover (al pasar el mouse) sobre la tarjeta 
+   MEJORADO: Elevación más pronunciada */
+.articulo-card:hover {
+    transform: translateY(-5px);                       /* Se eleva 5px */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);           /* Sombra grande y suave */
+}
+
+/* ========================================
+   IMAGEN DEL ARTÍCULO
+   ========================================
+   Imagen principal que aparece en la tarjeta
+   ACTUALIZADO: Centrada y con tamaño controlado
+   ======================================== */
+.articulo-card img {
+    max-width: 250px;                                  /* Ancho máximo de 250px */
+    width: 100%;                                       /* Se adapta al contenedor */
+    height: 180px;                                     /* Altura fija */
+    object-fit: cover;                                 /* Recorta sin deformar */
+    border-radius: 8px;                                /* Bordes redondeados */
+    margin: 0 auto 15px auto;                          /* Centrado horizontal con margin auto */
+    display: block;                                    /* Necesario para que margin auto funcione */
+}
+
+/* ========================================
+   CONTENIDO DE LA TARJETA
+   ========================================
+   Área que contiene título, descripción, etc.
+   ======================================== */
+.articulo-contenido {
+    padding: 0;                                        /* Sin padding adicional (ya está en el card) */
+}
+
+/* ========================================
+   ETIQUETA DE CATEGORÍA
+   ========================================
+   Badge pequeño que indica el tipo de contenido
+   ======================================== */
+.articulo-categoria {
+    display: inline-block;                             /* Se comporta como bloque pero en línea */
+    background: royalblue;                             /* Fondo azul royal */
+    color: white;                                      /* Texto blanco para buen contraste */
+    padding: 4px 12px;                                 /* Espaciado interno (vertical horizontal) */
+    border-radius: 4px;                                /* Bordes ligeramente redondeados */
+    font-size: 0.8em;                                  /* 80% del tamaño de fuente base */
+    font-weight: bold;                                 /* Texto en negrita */
+    margin-bottom: 10px;                               /* Separación inferior */
+}
+
+/* ========================================
+   TÍTULO DEL ARTÍCULO
+   ========================================
+   Encabezado principal de cada tarjeta
+   ======================================== */
+.articulo-titulo {
+    color: #2c3e50;                                    /* Gris azulado oscuro */
+    margin: 10px 0;                                    /* Márgenes verticales de 10px */
+    font-size: 1.2em;                                  /* 120% del tamaño base */
+}
+
+/* ========================================
+   RESUMEN DEL ARTÍCULO
+   ========================================
+   Descripción breve del contenido
+   ======================================== */
+.articulo-resumen {
+    color: #666;                                       /* Gris medio para texto secundario */
+    margin: 10px 0;                                    /* Márgenes verticales */
+    line-height: 1.5;                                  /* Altura de línea para mejor legibilidad */
+}
+
+/* ========================================
+   FECHA DE PUBLICACIÓN
+   ========================================
+   Metadata del artículo
+   ======================================== */
+.articulo-fecha {
+    color: #888;                                       /* Gris claro para información secundaria */
+    font-size: 0.9em;                                  /* Texto más pequeño */
+    margin: 10px 0;                                    /* Márgenes verticales */
+}
+
+/* ========================================
+   ENLACE "LEER MÁS"
+   ========================================
+   Botón/link para ir al artículo completo
+   ======================================== */
+.articulo-link {
+    display: inline-block;                             /* Se comporta como bloque pero en línea */
+    color: royalblue;                                  /* Azul royal */
+    text-decoration: none;                             /* Sin subrayado */
+    margin-top: 10px;                                  /* Separación superior */
+    font-weight: bold;                                 /* Negrita para destacar */
+}
+
+/* Efecto hover sobre el enlace */
+.articulo-link:hover {
+    text-decoration: underline;                        /* Añade subrayado al pasar el mouse */
+}
+
+/* ========================================
+   CONTROL DE VISIBILIDAD DE SECCIONES
+   ========================================
+   Clases para mostrar/ocultar contenido
+   mediante JavaScript (sistema de filtros)
+   ======================================== */
+
+/* Oculta completamente un elemento */
+.seccion-oculta {
+    display: none;                                     /* El elemento no se muestra ni ocupa espacio */
+}
+
+/* Muestra un elemento como bloque */
+.seccion-visible {
+    display: block;                                    /* El elemento se muestra normalmente */
 }
 
 /* ========================================
@@ -636,7 +805,7 @@ section {
 .comment {
     background: var(--blanco);
     padding: 15px;
-    border-left: 3px solid var(--rojo-bandera);          /* Barra roja izquierda */
+    border-left: 3px solid var(--rojo-bandera);        /* Barra roja izquierda */
     margin-bottom: var(--spacing-sm);
 }
 
@@ -656,8 +825,8 @@ section {
 
 /* Tabla completa */
 table {
-    width: 100%;                                          /* Ocupa todo el ancho */
-    border-collapse: collapse;                            /* Une los bordes */
+    width: 100%;                                       /* Ocupa todo el ancho */
+    border-collapse: collapse;                         /* Une los bordes */
     margin: var(--spacing-md) 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -665,27 +834,27 @@ table {
 /* Celdas de tabla (encabezado y datos) */
 th,
 td {
-    padding: 15px;                                        /* Espaciado interno */
-    text-align: left;                                     /* Alineación izquierda */
-    border: 1px solid #ddd;                              /* Borde gris claro */
+    padding: 15px;                                     /* Espaciado interno */
+    text-align: left;                                  /* Alineación izquierda */
+    border: 1px solid #ddd;                           /* Borde gris claro */
 }
 
 /* Encabezados de tabla */
 th {
-    background: var(--royal-blue);                        /* Fondo azul */
-    color: var(--blanco);                                 /* Texto blanco */
-    font-weight: bold;                                    /* Negrita */
+    background: var(--royal-blue);                     /* Fondo azul */
+    color: var(--blanco);                              /* Texto blanco */
+    font-weight: bold;                                 /* Negrita */
 }
 
 /* Filas pares (efecto zebra) */
 tr:nth-child(even) {
-    background: var(--gris-claro);                        /* Fondo gris claro */
+    background: var(--gris-claro);                     /* Fondo gris claro */
 }
 
 /* Efecto hover en filas */
 tr:hover {
-    background: var(--gris-medio);                        /* Fondo gris medio */
-    transition: background 0.2s;                          /* Transición suave */
+    background: var(--gris-medio);                     /* Fondo gris medio */
+    transition: background 0.2s;                       /* Transición suave */
 }
 
 /* ========================================
@@ -697,30 +866,30 @@ tr:hover {
 @media (max-width: 768px) {
     /* Header en móvil - cambia a columna vertical */
     header {
-        flex-direction: column;                           /* Apila verticalmente */
+        flex-direction: column;                        /* Apila verticalmente */
         gap: 15px;
         padding: 20px;
     }
 
     /* Reduce tamaño de títulos en móvil */
     h1 {
-        font-size: 2em;                                   /* Más pequeño */
+        font-size: 2em;                                /* Más pequeño */
     }
     
     h2 {
-        font-size: 1.5em;                                 /* Más pequeño */
+        font-size: 1.5em;                              /* Más pequeño */
     }
     
     /* Especialidades en columna en móvil */
     .especialidades-grid {
-        flex-direction: column;                           /* Una columna */
-        align-items: center;                              /* Centra los items */
+        flex-direction: column;                        /* Una columna */
+        align-items: center;                           /* Centra los items */
     }
 
     /* Cards de especialidad en móvil */
     .especialidad-card {
-        width: 100%;                                      /* Ancho completo */
-        max-width: 350px;                                 /* Pero no más de 350px */
+        width: 100%;                                   /* Ancho completo */
+        max-width: 350px;                              /* Pero no más de 350px */
     }
     
     /* Categorías en columna en móvil */
@@ -731,280 +900,137 @@ tr:hover {
     }
     
     .categoria {
-        width: fit-content;                               /* Ancho según contenido */
+        width: fit-content;                            /* Ancho según contenido */
     }
     
     /* Navegación en columna en móvil */
     .nav-buttons {
-        flex-direction: column;                           /* Apila verticalmente */
-        width: 100%;                                      /* Ancho completo */
+        flex-direction: column;                        /* Apila verticalmente */
+        width: 100%;                                   /* Ancho completo */
     }
 
     /* Barra de navegación wireframe en móvil */
     .wireframe-nav {
-        flex-direction: column;                           /* Columna vertical */
+        flex-direction: column;                        /* Columna vertical */
         padding: 15px;
     }
 
     /* Botones de navegación en móvil */
     .nav-btn {
-        width: 100%;                                      /* Ancho completo */
-        text-align: center;                               /* Texto centrado */
-        margin: 5px 0;                                    /* Margen vertical */
-    }
-    
-    /* Opiniones en columna en móvil */
-    .opiniones-barra {
-        flex-direction: column;                           /* Columna vertical */
-        align-items: center;                              /* Centra los items */
-    }
-    
-    /* Cards de opinión en móvil */
-    .opinion-card {
-        width: 100%;                                      /* Ancho completo */
-        max-width: 350px;                                 /* Pero no más de 350px */
+        width: 100%;                                   /* Ancho completo */
+        text-align: center;                            /* Texto centrado */
+        margin: 5px 0;                                 /* Margen vertical */
     }
 
     /* Footer en una columna en móvil */
     .wireframe-footer > div {
-        grid-template-columns: 1fr !important;            /* Una sola columna */
+        grid-template-columns: 1fr !important;         /* Una sola columna */
         gap: 20px;
-        text-align: center !important;                    /* Todo centrado */
+        text-align: center !important;                 /* Todo centrado */
     }
-       /* ========================================
-   GRID DE ARTÍCULOS DEL BLOG
-   ========================================
-   Sistema de cuadrícula responsive para mostrar
-   las tarjetas de artículos del blog
-   ======================================== */
-.articulos-grid {
-    display: grid;                                        /* Activa el sistema de cuadrícula CSS Grid */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    /* auto-fit: crea columnas automáticamente según el espacio disponible
-       minmax(280px, 1fr): cada columna mínimo 280px, máximo 1 fracción del espacio
-       Resultado: diseño responsive que se adapta al tamaño de pantalla */
-    gap: 25px;                                           /* Espacio entre las tarjetas de artículos */
-    margin-top: 30px;                                    /* Separación superior del grid */
 }
 
 /* ========================================
-   TARJETA INDIVIDUAL DE ARTÍCULO
-   ========================================
-   Contenedor de cada artículo del blog
-   ======================================== */
-.articulo-card {
-    background: white;                                    /* Fondo blanco limpio */
-    border-radius: 10px;                                  /* Esquinas redondeadas */
-    overflow: hidden;                                     /* Oculta contenido que sobresale (importante para imagen) */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);               /* Sombra sutil para profundidad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    /* Transición suave para transform y box-shadow
-       0.3s: duración de 300 milisegundos
-       ease: curva de aceleración suave */
-    cursor: pointer;                                      /* Cambia el cursor a manita (indica que es clickeable) */
-}
-
-/* Efecto hover (al pasar el mouse) sobre la tarjeta */
-.articulo-card:hover {
-    transform: translateY(-5px);                          /* Mueve la tarjeta 5px hacia arriba */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);              /* Sombra más grande y oscura (más profundidad) */
-}
-
-/* ========================================
-   IMAGEN DEL ARTÍCULO
-   ========================================
-   Imagen principal que aparece en la tarjeta
-   ======================================== */
-.articulo-imagen {
-    width: 100%;                                          /* Ocupa todo el ancho de la tarjeta */
-    height: 200px;                                        /* Altura fija de 200 píxeles */
-    object-fit: cover;                                    /* Recorta y ajusta la imagen sin deformarla */
-    /* object-fit: cover mantiene la proporción de la imagen
-       y la recorta para llenar todo el espacio disponible */
-}
-
-/* ========================================
-   CONTENIDO DE LA TARJETA
-   ========================================
-   Área que contiene título, descripción, etc.
-   ======================================== */
-.articulo-contenido {
-    padding: 20px;                                        /* Espaciado interno en todos los lados */
-}
-
-/* ========================================
-   ETIQUETA DE CATEGORÍA
-   ========================================
-   Badge pequeño que indica el tipo de contenido
-   ======================================== */
-.articulo-categoria {
-    display: inline-block;                                /* Se comporta como bloque pero en línea */
-    background: #CE1126;                                  /* Fondo rojo bandera costarricense */
-    color: white;                                         /* Texto blanco para buen contraste */
-    padding: 4px 12px;                                    /* Espaciado interno (vertical horizontal) */
-    border-radius: 15px;                                  /* Muy redondeado (forma de píldora) */
-    font-size: 0.85em;                                    /* 85% del tamaño de fuente base */
-    font-weight: bold;                                    /* Texto en negrita */
-    margin-bottom: 10px;                                  /* Separación inferior */
-}
-
-/* ========================================
-   TÍTULO DEL ARTÍCULO
-   ========================================
-   Encabezado principal de cada tarjeta
-   ======================================== */
-.articulo-titulo {
-    color: #002B7F;                                       /* Azul bandera costarricense */
-    font-size: 1.3em;                                     /* 130% del tamaño base (más grande) */
-    margin: 10px 0;                                       /* Márgenes verticales de 10px */
-    font-weight: bold;                                    /* Texto en negrita para destacar */
-}
-
-/* ========================================
-   RESUMEN DEL ARTÍCULO
-   ========================================
-   Descripción breve del contenido
-   ======================================== */
-.articulo-resumen {
-    color: #666;                                          /* Gris medio para texto secundario */
-    font-size: 0.95em;                                    /* Ligeramente más pequeño que el texto base */
-    line-height: 1.6;                                     /* Altura de línea para mejor legibilidad */
-    margin: 10px 0;                                       /* Márgenes verticales */
-}
-
-/* ========================================
-   FECHA DE PUBLICACIÓN
-   ========================================
-   Metadata del artículo
-   ======================================== */
-.articulo-fecha {
-    color: #999;                                          /* Gris claro para información secundaria */
-    font-size: 0.85em;                                    /* Texto más pequeño */
-    margin-top: 10px;                                     /* Separación superior */
-}
-
-/* ========================================
-   ENLACE "LEER MÁS"
-   ========================================
-   Botón/link para ir al artículo completo
-   ======================================== */
-.articulo-link {
-    display: inline-block;                                /* Se comporta como bloque pero en línea */
-    color: #0056b3;                                       /* Azul de navegación */
-    font-weight: 600;                                     /* Semi-negrita */
-    margin-top: 10px;                                     /* Separación superior */
-    text-decoration: none;                                /* Sin subrayado */
-    transition: color 0.3s ease;                          /* Transición suave del color */
-}
-
-/* Efecto hover sobre el enlace */
-.articulo-link:hover {
-    color: #003d82;                                       /* Azul más oscuro al pasar el mouse */
-}
-
-/* ========================================
-   CONTROL DE VISIBILIDAD DE SECCIONES
-   ========================================
-   Clases para mostrar/ocultar contenido
-   mediante JavaScript
+   RESUMEN DE CAMBIOS ACTUALIZADOS:
+   
+   MEJORAS EN EL SISTEMA DE BLOG:
+   
+   1. CATEGORÍAS:
+      - Diseño tipo "pill button" moderno
+      - Fondo blanco por defecto con borde
+      - Estado activo con fondo azul y texto blanco
+      - Hover con cambio de color sutil
+      - Spacing aumentado entre botones (15px)
+   
+   2. OPINIONES/RECETAS:
+      - Cambio de flexbox a CSS Grid
+      - Grid de 4 columnas en desktop
+      - Responsive automático:
+        * 4 columnas: pantallas grandes
+        * 3 columnas: hasta 1200px
+        * 2 columnas: hasta 768px
+        * 1 columna: hasta 480px
+      - Eliminado scroll horizontal
+      - Diseño más limpio con border-left
+   
+   3. TARJETAS DE ARTÍCULOS:
+      - Imágenes centradas con max-width 250px
+      - Altura fija de 180px para consistencia
+      - Margin auto para centrado horizontal
+      - Display block para que funcione el centrado
+      - Spacing aumentado en el grid (30px)
+      - Hover effect mejorado (elevación 5px)
+   
+   4. MEJORAS VISUALES:
+      - Bordes redondeados consistentes (8px)
+      - Sombras sutiles para profundidad
+      - Transiciones suaves (0.3s)
+      - Colores de la paleta del sitio
+      - Tipografía clara y legible
+   
+   VENTAJAS DEL NUEVO DISEÑO:
+   
+   ✅ Sin scroll horizontal incómodo
+   ✅ Todo el contenido visible sin desplazamiento
+   ✅ Responsive perfecto en todos los dispositivos
+   ✅ Mejor organización visual
+   ✅ Fácil de escanear visualmente
+   ✅ Accesible y profesional
+   ✅ Mantenible y escalable
+   
+   TÉCNICAS CSS UTILIZADAS:
+   
+   - CSS Grid con repeat() y fr units
+   - Media queries para responsive design
+   - Flexbox para elementos internos
+   - Transitions para animaciones suaves
+   - Transform para efectos hover
+   - Object-fit para control de imágenes
+   - Border-radius para diseño moderno
+   - Box-shadow para profundidad
+   - Pseudo-clases (:hover)
+   - Custom properties (variables CSS)
+   
    ======================================== */
 
-/* Oculta completamente un elemento */
-.seccion-oculta {
-    display: none;                                        /* El elemento no se muestra ni ocupa espacio */
-}
-
-/* Muestra un elemento como bloque */
-.seccion-visible {
-    display: block;                                       /* El elemento se muestra normalmente */
-}
-
 /* ========================================
-   CATEGORÍA ACTIVA
-   ========================================
-   Estilo para la categoría seleccionada
-   ======================================== */
-.categoria.activa {
-    background: #002B7F;                                  /* Azul bandera para destacar */
-    transform: scale(1.1);                                /* Aumenta el tamaño 10% */
-    /* transform: scale agranda el elemento desde su centro
-       1.1 = 110% del tamaño original */
-}
-
-
-}
-
-/* ========================================
-   RESUMEN DE TÉCNICAS CSS UTILIZADAS:
+   NOTAS TÉCNICAS IMPORTANTES:
    
-   1. CSS GRID:
-      - Sistema de layout moderno y flexible
-      - auto-fit: adapta automáticamente las columnas
-      - minmax(): define tamaños mínimo y máximo
-      - Responsive sin media queries
+   CSS GRID vs FLEXBOX:
    
-   2. FLEXBOX (implícito en inline-block):
-      - Para alinear elementos dentro de las tarjetas
+   - GRID: Mejor para layouts 2D (filas Y columnas)
+     Usado en: .opiniones-barra, .articulos-grid
+     Ventaja: Control preciso de filas y columnas
    
-   3. TRANSITIONS:
-      - Anima cambios de propiedades suavemente
-      - Mejora la experiencia de usuario
-      - Se aplica en hover effects
+   - FLEXBOX: Mejor para layouts 1D (una dirección)
+     Usado en: .categorias, .nav-buttons
+     Ventaja: Alineación flexible de elementos
    
-   4. TRANSFORMS:
-      - translateY(): mueve elementos verticalmente
-      - scale(): cambia el tamaño de elementos
-      - No afecta el flujo del documento
+   RESPONSIVE DESIGN:
    
-   5. OBJECT-FIT:
-      - Controla cómo las imágenes se ajustan a su contenedor
-      - cover: recorta manteniendo proporciones
+   - Mobile-first approach (opcional)
+   - Breakpoints estándar:
+     * 480px: móviles pequeños
+     * 768px: tablets
+     * 1200px: laptops pequeñas
    
-   6. BOX-SHADOW:
-      - Crea efectos de profundidad
-      - Formato: x-offset y-offset blur spread color
+   - Auto-fit vs Auto-fill:
+     * auto-fit: colapsa columnas vacías
+     * auto-fill: mantiene columnas vacías
+     Usamos auto-fit para mejor responsiveness
    
-   7. OVERFLOW:
-      - hidden: oculta contenido que sobresale
-      - Importante para border-radius en contenedores con imágenes
+   PERFORMANCE:
    
-   8. PSEUDO-CLASES:
-      - :hover para efectos interactivos
-      - Mejora la usabilidad
+   - Transitions solo en propiedades GPU-accelerated
+     (transform, opacity) cuando sea posible
+   - Object-fit: cover evita JavaScript para recortar
+   - Variables CSS reducen tamaño del archivo
    
-   9. CURSOR:
-      - pointer: indica elementos interactivos
-      - Mejora la experiencia de usuario
+   ACCESIBILIDAD:
    
-   10. DISPLAY:
-       - none: oculta completamente
-       - block: muestra como bloque
-       - inline-block: híbrido de inline y block
-       - grid: sistema de cuadrícula
-   
-   BUENAS PRÁCTICAS APLICADAS:
-   
-   - Código comentado y organizado por secciones
-   - Nombres de clases descriptivos (BEM-like)
-   - Valores reutilizables con variables
-   - Sistema de espaciado consistente
-   - Paleta de colores definida
-   - Diseño mobile-first
-   - Accesibilidad con contrastes adecuados
-   - Performance optimizado (transiciones GPU-accelerated)
-   
-   ========================================
-   TECNOLOGÍAS CSS3 MODERNAS:
-   
-   - Custom Properties (Variables CSS)
-   - Flexbox Layout
-   - Grid Layout
-   - Transitions & Transforms
-   - Media Queries
-   - Gradients (linear-gradient)
-   - Box Shadow
-   - Border Radius
-   - RGBA Colors
-   - calc() function (implícito en box-sizing)
+   - Contrastes WCAG AA cumplidos
+   - Cursor: pointer indica interactividad
+   - Focus states heredados de navegador
+   - Tamaños de fuente legibles (mínimo 0.8em)
    
    ======================================== */
