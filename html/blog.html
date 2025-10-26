@@ -23,11 +23,11 @@
         <!-- NAVEGACIÓN -->
         <div class="wireframe-nav" color="royalblue">
         <a href="../index.html" class="nav-btn" onclick="cambiarPagina('Inicio') ">Inicio</a>
-        <a href="menu.html" button class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
-        <a href="blog.html" button class="nav-btn" onclick="cambiarPagina('blog') ">Blog</a>
-        <a href="preguntasfrecuentes.html"button class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</a>
-        <a href="acercade.html"button class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
-        <a href="contactenos.html" button class="nav-btn" onclick="cambiarPagina('contactenos') ">Contactenos</a>
+        <a href="menu.html" class="nav-btn" onclick="cambiarPagina('menu') ">Menu</a>
+        <a href="blog.html" class="nav-btn" onclick="cambiarPagina('blog') ">Blog</a>
+        <a href="preguntasfrecuentes.html" class="nav-btn" onclick="cambiarPagina('preguntasfrecuentes') ">Preguntas Frecuentes</a>
+        <a href="acercade.html"class="nav-btn" onclick="cambiarPagina('acercade') ">Acerca De</a>
+        <a href="contactenos.html" class="nav-btn" onclick="cambiarPagina('contactenos') ">Contactenos</a>
         </div>   
     </header>
     <section>
@@ -159,39 +159,6 @@
         </div>
         <p style="margin-top: 20px;">© 2025 Soda Sabortico</p>
     </div>
-   <script>
-        function filtrarCategoria(categoria) {
-            // Remover clase activa de todas las categorías
-            const categorias = document.querySelectorAll('.categoria');
-            categorias.forEach(cat => cat.classList.remove('activa'));
-            
-            // Agregar clase activa a la categoría clickeada
-            event.target.classList.add('activa');
-            
-            const seccionArticulos = document.getElementById('seccion-articulos');
-            const seccionRecetas = document.getElementById('seccion-recetas');
-            
-            if (categoria === 'todas') {
-                // Mostrar ambas secciones
-                seccionRecetas.classList.remove('seccion-oculta');
-                seccionRecetas.classList.add('seccion-visible');
-                seccionArticulos.classList.remove('seccion-oculta');
-                seccionArticulos.classList.add('seccion-visible');
-            } else if (categoria === 'recetas') {
-                // Mostrar solo recetas
-                seccionRecetas.classList.remove('seccion-oculta');
-                seccionRecetas.classList.add('seccion-visible');
-                seccionArticulos.classList.remove('seccion-visible');
-                seccionArticulos.classList.add('seccion-oculta');
-            } else if (categoria === 'articulos') {
-                // Mostrar solo artículos
-                seccionArticulos.classList.remove('seccion-oculta');
-                seccionArticulos.classList.add('seccion-visible');
-                seccionRecetas.classList.remove('seccion-visible');
-                seccionRecetas.classList.add('seccion-oculta');
-            }
-        }
-    </script>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>
