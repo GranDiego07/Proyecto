@@ -1,7 +1,3 @@
-// ===============================================
-// LÓGICA DEL FORMULARIO DE CONTACTO (contactenos.js)
-// ===============================================
-
 // 1. REFERENCIAS AL DOM: Obtenemos los elementos HTML que vamos a manipular
 const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
@@ -12,10 +8,6 @@ const grupoPersonas = document.getElementById('grupo-personas');
 
 // Obtenemos todos los inputs, selects y textareas del formulario para la validación
 const inputs = form.querySelectorAll('input, select, textarea');
-
-// ===============================================
-// 2. LÓGICA CONDICIONAL: Mostrar/Ocultar campos
-// ===============================================
 
 // Escucha el evento 'change' (cambio de opción) en el selector de Motivo
 motivoSelect.addEventListener('change', function() {
@@ -31,10 +23,6 @@ motivoSelect.addEventListener('change', function() {
         document.getElementById('personas').required = false;
     }
 });
-
-// ===============================================
-// 3. VALIDACIÓN EN TIEMPO REAL
-// ===============================================
 
 // Iteramos sobre todos los campos para agregarles escuchadores de eventos
 inputs.forEach(input => {
@@ -71,10 +59,6 @@ function validarCampo(campo) {
         return true;
     }
 }
-
-// ===============================================
-// 4. MANEJO DEL ENVÍO (SUBMIT)
-// ===============================================
 
 // Escucha el evento 'submit' (envío) del formulario
 form.addEventListener('submit', async function(e) {
@@ -171,9 +155,6 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
-// ===============================================
-// 5. LÓGICA DEL MODAL
-// ===============================================
 
 /**
  * Muestra el modal de confirmación/error con contenido dinámico.
